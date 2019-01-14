@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commande</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commande.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ commande.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ commande.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ commande.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ commande.ville }}</td>
+            </tr>
+            <tr>
+                <th>Codepostal</th>
+                <td>{{ commande.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if commande.createdAt %}{{ commande.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commande_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

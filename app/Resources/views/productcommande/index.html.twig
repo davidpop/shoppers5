@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Productcommandes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantite</th>
+                <th>Product</th>
+                <th>Commande</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for productCommande in productCommandes %}
+            <tr>
+                <td><a href="{{ path('productcommande_show', { 'id': productCommande.id }) }}">{{ productCommande.id }}</a></td>
+                <td>{{ productCommande.quantite }}</td>
+                <td>{{ productCommande.product }}</td>
+                <td>{{ productCommande.commande }}</td>
+                <td>{{ productCommande.prix }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('productcommande_show', { 'id': productCommande.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('productcommande_edit', { 'id': productCommande.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('productcommande_new') }}">Create a new productCommande</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends('layout.html.twig')  %}
+
+{% block body %}
+
+    {#
+    Designation : {{ produit.getNomProduit() }}
+    <br/>
+
+    Description : {{ produit.getDescription() }}
+    <br/>
+
+    Prix Unitaire : {{ produit.getPrix() }}
+    <br/>
+
+    {% if produit.getPhotoPrincipale() %}
+    <img src="{{ produit.getPhotoPrincipale().getPath() }}" alt="{{ produit.photoPrincipale().getPath() }}" />
+    {% endif %}
+    <br/>
+    <br/>
+    {% for image in images %}
+        <img src="{{ image.getPath() }}"
+             alt="{{ image.getPath() }}"
+                />
+    {% endfor %}
+
+
+        {% for cat in produit.getCategorys() %}
+            {{ cat }}
+        {% endfor %}
+    <br/>
+    #}
+
+    ----
+
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    {% if produit.getPhotoPrincipale() %}
+                        <img src="{{ produit.getPhotoPrincipale().getPath() }}"
+                             alt="{{ produit.photoPrincipale().getPath() }}"
+                             class="img-fluid"
+                        />
+                    {% endif %}
+
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-black">{{ produit.getNomProduit() }}</h2>
+                    <p>{{ produit.description() }}</p>
+                    <p><strong class="text-primary h4">{{ produit.getPrix() }}</strong></p>
+
+
+                    <div class="mb-5">
+                        <div class="input-group mb-3" style="max-width: 120px;">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                            </div>
+                            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>{% if produit.getQuantite() %}
+                            Quantité : {{ produit.getQuantite() }}
+                        {% else %}
+                            Article indisponible
+                        {% endif %}
+                    </p>
+                    <p>
+                        <a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                {% for image in images %}
+                    <div class="col-md-6">
+                        <img src="{{ image.getPath() }}"
+                             alt="{{ image.getAlt() }}"
+                             class="img-responsive"
+                        />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    ----
+
+
+{% endblock body %}

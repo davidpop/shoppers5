@@ -1,0 +1,4 @@
+services:
+#    bouique_front.example:
+#        class: Bouique\FrontBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
