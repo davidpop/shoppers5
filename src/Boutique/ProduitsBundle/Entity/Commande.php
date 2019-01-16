@@ -3,6 +3,7 @@
 namespace Boutique\ProduitsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\Tests\StringableObject;
 
 /**
  * Commande
@@ -62,6 +63,13 @@ class Commande
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email ;
 
 
     /**
@@ -216,5 +224,26 @@ class Commande
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email ;
+        return $this ;
     }
 }

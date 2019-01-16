@@ -70,12 +70,7 @@ class Product
      */
     private $photoPrincipale ;
 
-    /**
-     * @var Image
-     *
-     * @ORM\OneToMany(targetEntity="Boutique\ProduitsBundle\Entity\Image", mappedBy="image",cascade={"persist","remove"})
-     */
-    private $images ;
+
 
     /**
      *
@@ -221,39 +216,6 @@ class Product
         return $this->photoPrincipale;
     }
 
-    /**
-     * Add image
-     *
-     * @param \Boutique\ProduitsBundle\Entity\Image $image
-     *
-     * @return Product
-     */
-    public function addImage(\Boutique\ProduitsBundle\Entity\Image $image)
-    {
-        $this->images[] = $image;
-
-        return $this;
-    }
-
-    /**
-     * Remove image
-     *
-     * @param \Boutique\ProduitsBundle\Entity\Image $image
-     */
-    public function removeImage(\Boutique\ProduitsBundle\Entity\Image $image)
-    {
-        $this->images->removeElement($image);
-    }
-
-    /**
-     * Get images
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getImages()
-    {
-        return $this->images;
-    }
 
     /**
      * Add category

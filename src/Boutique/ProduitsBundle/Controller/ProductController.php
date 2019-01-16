@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Product controller.
@@ -21,14 +22,13 @@ class ProductController extends Controller
      * @Route("/", name="product_index")
      * @Method("GET")
      */
-    public function indexAction()
-    {
+    public function indexAction(){
         $em = $this->getDoctrine()->getManager();
 
         $products = $em->getRepository('BoutiqueProduitsBundle:Product')->findAll();
 
         return $this->render('product/index.html.twig', array(
-            'products' => $products,
+            'products' => $products, 'panier_taille' => $this->getSizeOfCart()
         ));
     }
     /**
@@ -42,6 +42,64 @@ class ProductController extends Controller
         return $this->render('product/search.html.twig', array
             ('text_haut'=>'Resultats de la recherche','ps' => $ps)
         );
+    }
+
+    /**
+     * @Route("/showbytype/{catid}", name="product_typed")
+     */
+    public function showByType($catid){
+        $em = $this->getDoctrine()->getManager();
+        //$type = $request->query()->get('catid');
+
+        $products = $em->getRepository('BoutiqueProduitsBundle:Product')
+            ->findByCategory($catid);
+
+        return $this->render('product/search.html.twig',
+            array(
+                'text_haut'=>'',
+            'ps' => $products
+        ));
+    }
+
+    /**
+     * @Route("/addtocart/{pid}", name="product_addtocart")
+     */
+    public function addToCartAction(Request $req, $pid){
+
+        $s = $this->get('session');
+        $cart = $s->get('cart');
+        $qte = $req->request->get('quantite');
+        $t = array('id' => $pid, 'qte' => $qte);
+
+//        dump($t);
+
+        if (!isset($cart) )
+            $cart = array();
+        foreach( $cart as $clef => $prod_table ) {
+            if ( $pid == $prod_table['id'] ) {
+                $t = array('id' => $pid, 'qte' => $prod_table['qte'] + $qte);
+                unset($cart[$clef]);
+            }
+        }
+        $cart[] = $t;
+
+        $s->set('cart', $cart);
+        return $this->redirectToRoute('boutique.accueil');
+    }
+    /**
+     * @Route("/delfromcart/{pid}", name="product_delfromcart")
+     */
+    public function delFromCartAction(Request $req, $pid){
+
+        $s = $this->get('session');
+        $cart = $s->get('cart');
+        foreach( $cart as $clef => $prod_table ) {
+            if ( $pid == $prod_table['id'] ) {
+                unset($cart[$clef]);
+            }
+        }
+        $s->set('cart', $cart);
+        return $this->redirectToRoute('boutique.accueil');
     }
 
     /**
@@ -79,9 +137,15 @@ class ProductController extends Controller
      */
     public function showAction(Product $product)
     {
-        $deleteForm = $this->createDeleteForm($product);
+        // pas bon du tout, les img ont disparu apres la V4
+        $images = null ;
+/*        $deleteForm = $this->createDeleteForm($product);
 
-        return $this->render('product/show.html.twig', array('product' => $product,'delete_form' => $deleteForm->createView(),));
+        return $this->render('product/show.html.twig',
+            array('product' => $product,'delete_form' => $deleteForm->createView(),));
+*/
+        return $this->render('product/show2.html.twig',
+            array('product' => $product,'images' => $images));
     }
 
     /**

@@ -29,9 +29,6 @@ class ProductCommande
     private $quantite;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="product", type="integer")
      *
      * @ORM\ManyToOne(targetEntity="Boutique\ProduitsBundle\Entity\Product")
      * @ORM\JoinColumn(nullable=false)
@@ -39,10 +36,6 @@ class ProductCommande
     private $product;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="commande", type="integer")
-     *
      * @ORM\ManyToOne(targetEntity="Boutique\ProduitsBundle\Entity\Commande")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -90,53 +83,6 @@ class ProductCommande
         return $this->quantite;
     }
 
-    /**
-     * Set product
-     *
-     * @param integer $product
-     *
-     * @return ProductCommande
-     */
-    public function setProduct($product)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return int
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
-     * Set commande
-     *
-     * @param integer $commande
-     *
-     * @return ProductCommande
-     */
-    public function setCommande($commande)
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Get commande
-     *
-     * @return int
-     */
-    public function getCommande()
-    {
-        return $this->commande;
-    }
 
     /**
      * Set prix
@@ -160,5 +106,53 @@ class ProductCommande
     public function getPrix()
     {
         return $this->prix;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Boutique\ProduitsBundle\Entity\Product $product
+     *
+     * @return ProductCommande
+     */
+    public function setProduct(\Boutique\ProduitsBundle\Entity\Product $product)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Boutique\ProduitsBundle\Entity\Product
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param \Boutique\ProduitsBundle\Entity\Commande $commande
+     *
+     * @return ProductCommande
+     */
+    public function setCommande(\Boutique\ProduitsBundle\Entity\Commande $commande)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \Boutique\ProduitsBundle\Entity\Commande
+     */
+    public function getCommande()
+    {
+        return $this->commande;
     }
 }

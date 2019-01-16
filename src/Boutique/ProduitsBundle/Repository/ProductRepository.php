@@ -2,6 +2,12 @@
 
 namespace Boutique\ProduitsBundle\Repository;
 
+
+use Boutique\ProduitsBundle\Entity\Category;
+use Boutique\ProduitsBundle\Entity\Product;
+use Doctrine\ORM\Query\Expr\Join;
+
+
 /**
  * ProductRepository
  *
@@ -16,5 +22,20 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('terme','%'.$terme.'%')
             ->getQuery();
         return $query->execute();
+    }
+
+
+
+    public function findByCategory($c){
+        return $this->createQueryBuilder('p')
+            ->join('p.categorys', 'c')
+            ->where(' c.id = :id ')
+            ->setParameter('id', $c)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function countByCategory($c){
+
     }
 }

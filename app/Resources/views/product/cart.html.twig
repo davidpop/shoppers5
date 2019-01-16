@@ -1,0 +1,110 @@
+{% extends('layout.html.twig') %}
+
+{% block body %}
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="{{ path('accueil') }}">Accueil</a>
+                <span class="mx-2 mb-0">/</span>
+                <strong class="text-black">Panier</strong></div>
+        </div>
+    </div>
+</div>
+
+    {{ dump() }}
+
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+                <div class="site-blocks-table">
+                    {% if ps %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="product-thumbnail">Image</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-total">Total</th>
+                            <th class="product-remove">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for p in ps %}
+                                <tr>
+                                    <td class="product-thumbnail">
+                                        <img src="{{ p['p'].getPhotoPrincipale().getPath() }}" alt="Image" class="img-fluid">
+                                    </td>
+                                    <td class="product-name">
+                                        <h2 class="h5 text-black">{{ p['p'].nom }}</h2>
+                                    </td>
+                                    <td>{{ p['p'].getPrix() }}</td>
+                                    <td>
+
+                                        <div class="input-group mb-3" style="max-width: 120px;">
+
+                                            <div class="input-group-prepend">
+                                                <form method="POST" action="{{ path('product_addtocart',{'pid': p['p'].id } ) }}">
+
+                                                    <input type="hidden" name="quantite" value="{{ p['qte']-1 }}" />
+                                                    <!--
+                                                    <input type="submit" name="sub" value="-" class="btn btn-outline-primary js-btn-minus"/>
+                                                    -->
+                                                    <button type="submit" class="btn btn-outline-primary">-</button>
+                                                </form>
+                                            </div>
+                                            <input type="text" class="form-control text-center"
+                                                   name="quantite"
+                                                   value="{{ p['qte'] }}" placeholder=""
+                                                   aria-label="Example text with button addon" aria-describedby="button-addon1"
+                                                    />
+                                            <div class="input-group-append">
+                                                <form method="POST" action="{{ path('product_addtocart',{'pid': p['p'].id } ) }}">
+                                                    <input type="hidden" name="quantite" value="{{ p['qte']+1 }}" />
+                                                    <input type="submit" name="add" value="+" class="btn btn-outline-primary"/>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{ p['prix'] }}</td>
+                                    <td><a href="{{ path('product_delfromcart',{'pid': p['p'].id}) }}"
+                                           class="btn btn-primary btn-sm">X</a>
+                                        </td>
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <a href="{{ path('recalc') }}"
+                                       class="buy-now btn btn-sm btn-warning float-right">
+                                       recalculer
+                                    </a>
+
+                                    <a href="{{ path('reset_cart') }}"
+                                        class="buy-now btn btn-sm btn-danger float-right">
+                                            Vider le panier
+                                    </a>
+
+                                    <a href="{{ path('validate_cart') }}"
+                                        class="buy-now btn btn-sm btn-primary float-right">
+                                            Valider le panier
+                                    </a>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    {%  else %}
+                        <h3 class="text-center">Votre panier est vide !</h3>
+                        <h4><a href="{{ path('boutique.accueil') }}">Revenir aux produit</a></h4>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

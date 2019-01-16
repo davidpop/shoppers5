@@ -36,10 +36,16 @@
                             <li><a href="#"><span class="icon icon-person"></span></a></li>
                             <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                             <li>
-                                <a href="cart.html" class="site-cart">
+                                <a href="{{ path('cart') }}" class="site-cart">
                                     <span class="icon icon-shopping_cart"></span>
                                     <!-- taille du panier -->
-                                    <span class="count">0</span>
+                                    <span class="count">
+                                        {% if panier_taille is defined %}
+                                            {{ panier_taille }}
+                                        {% else %}
+                                            0
+                                        {% endif %}
+                                    </span>
                                 </a>
                             </li>
                             <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -52,7 +58,8 @@
     <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
             <ul class="site-menu js-clone-nav d-none d-md-block">
-                <li class="has-children">
+                <!-- <li class="has-children"> -->
+                <li>
                     <a href="{{ path('accueil') }}">Accueil</a>
                     <!--
                     <ul class="dropdown">
@@ -70,28 +77,25 @@
                     </ul>
                     -->
                 </li>
-                <li class="has-children">
-                    <a href="{{ path('about') }}">About</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                    </ul>
+                <li>
+                    <a href="{{ path('about') }}">à propos</a>
                 </li>
                 <li><a href="{{ path('boutique.accueil') }}">Boutique</a></li>
+                <!--
                 <li><a href="#">Catalogue</a></li>
                 <li><a href="#">Arrivages</a></li>
+                -->
                 <li><a href="{{ path("contact") }}">Contact</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
-    <div class="container">
+
         {% block body %}
             {#**************************************#}
         {% endblock %}
-    </div>
+
 
 <footer class="site-footer border-top">
     <div class="container">

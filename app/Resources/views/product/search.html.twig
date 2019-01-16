@@ -19,7 +19,7 @@
                         <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                             <div class="block-4 text-center border">
                                 <figure class="block-4-image">
-                                    <a href="{{ path('produits.show',{'id': p.getId()} ) }}">
+                                    <a href="{{ path('product_show',{'id': p.getId()} ) }}">
                                         {% if p.getPhotoPrincipale() %}
                                             <img src="{{ p.getPhotoPrincipale().getPath() }}"
                                                  alt="{{ p.photoPrincipale().getPath() }}"

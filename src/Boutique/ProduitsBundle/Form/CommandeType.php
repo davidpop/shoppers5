@@ -3,7 +3,9 @@
 namespace Boutique\ProduitsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CommandeType extends AbstractType
@@ -13,7 +15,11 @@ class CommandeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('adresse')->add('ville')->add('codePostal')->add('createdAt');
+        $builder->add('nom')->add('prenom')
+            ->add('adresse')->add('ville')
+            ->add('codePostal')
+            ->add('email')
+            ->add('valider', SubmitType::class);
     }/**
      * {@inheritdoc}
      */

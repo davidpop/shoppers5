@@ -68,6 +68,7 @@
                                         <p class="text-primary font-weight-bold">
                                             {{ leproduit.getPrix() }} €
                                         </p>
+
                                     </div>
                                 </div>
                             </div>
@@ -91,12 +92,20 @@
                     </div>
                 </div>
 
+
                 <div class="col-md-3 order-1 mb-5 mb-md-0">
                     <div class="border p-4 rounded mb-4">
                         <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                         <ul class="list-unstyled mb-0">
                             {% for cat in lesCategories %}
-                                <li class="mb-1"><a href="#" class="d-flex"><span>{{ cat }}</span> <span class="text-black ml-auto">(???)</span></a></li>
+                                <li class="mb-1">
+                                    <a href="{{ path('product_typed', {'catid': cat.id}) }}" class="d-flex">
+                                        <span>{{ cat }}</span>
+                                        <span class="text-black ml-auto">
+                                            ({{ lesCounts[cat.id] }})
+                                        </span>
+                                    </a>
+                                </li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -152,7 +161,7 @@
                         <div class="row">
                             {% for cat in lesCategories %}
                                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                                    <a class="block-2-item" href="#">
+                                    <a class="block-2-item" href="{{ path('product_typed', {'catid': cat.id}) }}">
                                         <figure class="image">
                                             <img src="{{ asset("images/women.jpg") }}" alt="" class="img-fluid">
                                         </figure>
