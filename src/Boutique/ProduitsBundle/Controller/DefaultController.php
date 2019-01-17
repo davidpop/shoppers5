@@ -96,6 +96,14 @@ class DefaultController extends Controller
      */
     public function validateCartAction(Request$request, $step=1){
         if ( $step == 1 ) {
+            $user = $this->getUser();
+
+            dump($user);
+            exit(1);
+            // si on n est pas connecté on redirige vers le formLogin
+            // si les infos user sont incomplètes, on lui affiche le formUser
+            // sinon
+
             $cmd = new Commande();
             $formCmd = $this->createForm(CommandeType::class, $cmd);
             $formCmd->handleRequest($request);
@@ -107,9 +115,13 @@ class DefaultController extends Controller
                 $this->get('session')->set('cid', $cmd->getId() );
                 return $this->redirectToRoute('validate_cart',['step'=>2]);
             }
+
             return $this->render('product/simple.html.twig',
                 array('f' => $formCmd->createView(), 'panier_taille'=> $this->getSizeOfCart() )
             );
+
+
+
         }
         if ( $step == 2) {
             $cart = $this->get('session')->get('cart');

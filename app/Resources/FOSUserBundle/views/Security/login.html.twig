@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {% block fos_user_content %}
+        {{ include('@FOSUser/Security/login_content.html.twig') }}
+    {% endblock %}
+{% endblock %}

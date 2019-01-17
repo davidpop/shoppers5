@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Product controller.
@@ -65,6 +67,9 @@ class ProductController extends Controller
      * @Route("/addtocart/{pid}", name="product_addtocart")
      */
     public function addToCartAction(Request $req, $pid){
+/*
+        dump($_POST, $_GET);
+        exit(1);*/
 
         $s = $this->get('session');
         $cart = $s->get('cart');
@@ -104,6 +109,8 @@ class ProductController extends Controller
 
     /**
      * Creates a new product entity.
+     *
+     * @Security("is_granted('ROLE_ADMIN')")
      *
      * @Route("/new", name="product_new")
      * @Method({"GET", "POST"})
@@ -151,6 +158,8 @@ class ProductController extends Controller
     /**
      * Displays a form to edit an existing product entity.
      *
+     * @Security("is_granted('ROLE_ADMIN')")
+     *
      * @Route("/{id}/edit", name="product_edit")
      * @Method({"GET", "POST"})
      */
@@ -176,6 +185,8 @@ class ProductController extends Controller
     /**
      * Deletes a product entity.
      *
+     * @Security("is_granted('ROLE_ADMIN')")
+     *
      * @Route("/{id}", name="product_delete")
      * @Method("DELETE")
      */
@@ -194,6 +205,8 @@ class ProductController extends Controller
 
     /**
      * Creates a form to delete a product entity.
+     *
+     * @Security("is_granted('ROLE_ADMIN')")
      *
      * @param Product $product The product entity
      *

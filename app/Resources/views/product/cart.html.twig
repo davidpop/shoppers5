@@ -44,28 +44,29 @@
                                     <td>
 
                                         <div class="input-group mb-3" style="max-width: 120px;">
-
+                                            <!--
                                             <div class="input-group-prepend">
-                                                <form method="POST" action="{{ path('product_addtocart',{'pid': p['p'].id } ) }}">
+                                                <form method="POST" action=" path('product_addtocart',{'pid': p['p'].id } ) }}">
 
-                                                    <input type="hidden" name="quantite" value="{{ p['qte']-1 }}" />
-                                                    <!--
-                                                    <input type="submit" name="sub" value="-" class="btn btn-outline-primary js-btn-minus"/>
-                                                    -->
+                                                    <input type="hidden" name="quantite" value=" p['qte']-1 }}" />
+
                                                     <button type="submit" class="btn btn-outline-primary">-</button>
                                                 </form>
                                             </div>
+                                        -->
                                             <input type="text" class="form-control text-center"
-                                                   name="quantite"
+                                                   name="quantite" disabled="disabled"
                                                    value="{{ p['qte'] }}" placeholder=""
                                                    aria-label="Example text with button addon" aria-describedby="button-addon1"
                                                     />
+                                            <!--
                                             <div class="input-group-append">
-                                                <form method="POST" action="{{ path('product_addtocart',{'pid': p['p'].id } ) }}">
-                                                    <input type="hidden" name="quantite" value="{{ p['qte']+1 }}" />
+                                                <form method="POST" action=" path('product_addtocart',{'pid': p['p'].id } ) }}">
+                                                    <input type="hidden" name="quantite" value="  p['qte']+1 }}" />
                                                     <input type="submit" name="add" value="+" class="btn btn-outline-primary"/>
                                                 </form>
                                             </div>
+                                            -->
                                         </div>
                                     </td>
                                     <td>{{ p['prix'] }}</td>

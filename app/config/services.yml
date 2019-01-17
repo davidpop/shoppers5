@@ -13,4 +13,11 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: false
-
+    app.form.registration:
+        class: Boutique\UserBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: boutique_user_registration }
+    app.form.profile:
+        class: Boutique\UserBundle\Form\ProfileFormType
+        tags:
+            - { name: form.type, alias: boutique_user_profile }

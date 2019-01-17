@@ -1,58 +1,98 @@
 <?php
 
-namespace Boutique\ProduitsBundle\Entity;
+namespace Boutique\UserBundle\Entity;
 
-use Boutique\UserBundle\Entity\User;
+use FOS\UserBundle\Model\User as BaseUser ;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\Tests\StringableObject;
 
 /**
- * Commande
+ * User
  *
- * @ORM\Table(name="commande")
- * @ORM\Entity(repositoryClass="Boutique\ProduitsBundle\Repository\CommandeRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="Boutique\UserBundle\Repository\UserRepository")
  */
-class Commande
+class User extends BaseUser
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var User
      *
-     * @ORM\ManyToOne(targetEntity="Boutique\UserBundle\Entity\User")
-     */
-    private $user ;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="created_at", type="datetime")
-     */
-    private $createdAt;
-
-    /**
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 64,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $email ;
-
+    protected $nom;
 
     /**
-     * Get id
      *
-     * @return int
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 64,
+     *      minMessage  = "Votre saisie est incorrecte !",
+     *      maxMessage  = "Votre saisie est incorrecte !"
+     * )
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
      */
-    public function getId()
+    protected $prenom;
+
+    /**
+     *
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Votre saisie est incorrecte !"
+     * )
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="text")
+     */
+    protected $adresse;
+
+    /**
+     *
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Votre saisie est incorrecte !"
+     * )
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=255)
+     */
+    protected $ville;
+
+    /**
+     *
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 5,
+     *      minMessage = "Le Code Postal est sur 5 chiffres",
+     *      maxMessage = "Le Code Postal est sur 5 chiffres"
+     * )
+     * @var string
+     *
+     * @ORM\Column(name="codePostal", type="string", length=255)
+     */
+    protected $codePostal;
+
+
+
+    public function __construct()
     {
-        return $this->id;
+        parent::__construct();
+        // your own logic
     }
 
     /**
@@ -60,7 +100,7 @@ class Commande
      *
      * @param string $nom
      *
-     * @return Commande
+     * @return User
      */
     public function setNom($nom)
     {
@@ -84,7 +124,7 @@ class Commande
      *
      * @param string $prenom
      *
-     * @return Commande
+     * @return User
      */
     public function setPrenom($prenom)
     {
@@ -108,7 +148,7 @@ class Commande
      *
      * @param string $adresse
      *
-     * @return Commande
+     * @return User
      */
     public function setAdresse($adresse)
     {
@@ -132,7 +172,7 @@ class Commande
      *
      * @param string $ville
      *
-     * @return Commande
+     * @return User
      */
     public function setVille($ville)
     {
@@ -156,7 +196,7 @@ class Commande
      *
      * @param string $codePostal
      *
-     * @return Commande
+     * @return User
      */
     public function setCodePostal($codePostal)
     {
@@ -180,7 +220,7 @@ class Commande
      *
      * @param \DateTime $createdAt
      *
-     * @return Commande
+     * @return User
      */
     public function setCreatedAt($createdAt)
     {
@@ -188,35 +228,5 @@ class Commande
 
         return $this;
     }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTime();
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
-        $this->email = $email ;
-        return $this ;
-    }
+    
 }

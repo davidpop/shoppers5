@@ -5,7 +5,11 @@ namespace Boutique\ProduitsBundle\Controller;
 use Boutique\ProduitsBundle\Entity\ProductCommande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * Productcommande controller.
@@ -34,6 +38,8 @@ class ProductCommandeController extends Controller
     /**
      * Creates a new productCommande entity.
      *
+     * @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
+     *
      * @Route("/new", name="productcommande_new")
      * @Method({"GET", "POST"})
      */
@@ -60,6 +66,8 @@ class ProductCommandeController extends Controller
     /**
      * Finds and displays a productCommande entity.
      *
+     * @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
+     *
      * @Route("/{id}", name="productcommande_show")
      * @Method("GET")
      */
@@ -76,6 +84,8 @@ class ProductCommandeController extends Controller
     /**
      * Displays a form to edit an existing productCommande entity.
      *
+     * @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
+     *
      * @Route("/{id}/edit", name="productcommande_edit")
      * @Method({"GET", "POST"})
      */
@@ -88,7 +98,9 @@ class ProductCommandeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('productcommande_edit', array('id' => $productCommande->getId()));
+            return $this->redirectToRoute('productcommande_edit',
+                array('id' => $productCommande->getId())
+            );
         }
 
         return $this->render('productcommande/edit.html.twig', array(
