@@ -34,16 +34,21 @@
                     <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                         <div class="site-top-icons">
                             <ul>
+                                {% if app.user %}
                                 <li>
-                                    {% if app.user %}
-                                        <a href="#">{{ app.user.nom }}</a>
-                                    {% else %}
-                                        <a href="{{ path('fos_user_security_login') }}"><span class="icon icon-person"></span></a>
-                                    {% endif %}
+                                    <a href="#">{{ app.user.nom | capitalize }}</a>
                                 </li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}"
+                                        title="Se deconnecter"><span class="icon icon-person text-danger"></span></a>
+                                </li>
+                                {% else %}
+                                    <a href="{{ path('fos_user_security_login') }}"><span class="icon icon-person"></span></a>
+                                {% endif %}
+
                                 <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                                 <li>
-                                    <a href="{{ path('cart') }}" class="site-cart">
+                                    <a href="{{ path('cart') }}" class="site-cart" title="Votre panier">
                                         <span class="icon icon-shopping_cart"></span>
                                         <!-- taille du panier -->
                                         <span class="count">
@@ -187,5 +192,24 @@
 <script src="{{ asset("js/jquery.magnific-popup.min.js") }}"></script>
 <script src="{{ asset("js/aos.js") }}"></script>
 <script src="{{ asset("js/main.js") }}"></script>
+<script>
+    var $collectionHolder;
+    // setup an "add a tag" link
+    var $addImageButton = $('<button type="button" class="add_img_link btn btn-success">Ajouter une image</button>');
+    var $newLinkLi = $('<li></li>').append($addImageButton);
+    jQuery(document).ready(function() {
+        // Get the ul that holds the collection of tags
+        $collectionHolder = $('ul.images');
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+        $addImageButton.on('click', function(e) {
+            // add a new tag form (see next code block)
+            $addImageForm($collectionHolder, $newLinkLi);
+        });
+    });
+    </script>
 </body>
 </html>

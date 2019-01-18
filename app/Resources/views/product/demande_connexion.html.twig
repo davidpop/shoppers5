@@ -1,0 +1,27 @@
+{% extends('layout.html.twig')  %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="jumbotron ">
+            <div class="row mb-5 ">
+                <h4 class="text-center text-danger">
+                    Vous devez vous connecter afin de pouvoir continuer.
+                </h4>
+            </div>
+            <div class="row mb-5 ">
+                <p>
+                    <div class="col-md-6 mb-5">
+                        <h5>Connexion</h5>
+                        <a href="{{ path('fos_user_security_login') }}" class="btn btn-dark">Se Connecter</a>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h5>Création d'un compte</h5>
+                        <a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary">S'enregistrer</a>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

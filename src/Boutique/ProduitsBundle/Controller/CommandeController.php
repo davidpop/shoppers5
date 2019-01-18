@@ -5,7 +5,9 @@ namespace Boutique\ProduitsBundle\Controller;
 use Boutique\ProduitsBundle\Entity\Commande;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Commande controller.
@@ -33,6 +35,8 @@ class CommandeController extends Controller
 
     /**
      * Creates a new commande entity.
+     *
+     *  @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
      *
      * @Route("/new", name="commande_new")
      * @Method({"GET", "POST"})
@@ -76,6 +80,8 @@ class CommandeController extends Controller
     /**
      * Displays a form to edit an existing commande entity.
      *
+     *  @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
+     *
      * @Route("/{id}/edit", name="commande_edit")
      * @Method({"GET", "POST"})
      */
@@ -100,6 +106,8 @@ class CommandeController extends Controller
 
     /**
      * Deletes a commande entity.
+     *
+     *  @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
      *
      * @Route("/{id}", name="commande_delete")
      * @Method("DELETE")

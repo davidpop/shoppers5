@@ -113,6 +113,8 @@ class ProductCommandeController extends Controller
     /**
      * Deletes a productCommande entity.
      *
+     * @IsGranted("ROLE_ADMIN", message="Acces Interdit !! Du Balai !")
+     *
      * @Route("/{id}", name="productcommande_delete")
      * @Method("DELETE")
      */

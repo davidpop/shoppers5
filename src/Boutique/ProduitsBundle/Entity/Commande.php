@@ -37,13 +37,6 @@ class Commande
      */
     private $createdAt;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email ;
-
 
     /**
      * Get id
@@ -53,126 +46,6 @@ class Commande
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Commande
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Commande
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * Set adresse
-     *
-     * @param string $adresse
-     *
-     * @return Commande
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
-    /**
-     * Get adresse
-     *
-     * @return string
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Commande
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
-
-    /**
-     * Set codePostal
-     *
-     * @param string $codePostal
-     *
-     * @return Commande
-     */
-    public function setCodePostal($codePostal)
-    {
-        $this->codePostal = $codePostal;
-
-        return $this;
-    }
-
-    /**
-     * Get codePostal
-     *
-     * @return string
-     */
-    public function getCodePostal()
-    {
-        return $this->codePostal;
     }
 
     /**
@@ -204,19 +77,28 @@ class Commande
         $this->createdAt = new \DateTime();
     }
 
+
     /**
-     * Get createdAt
+     * Set user
      *
-     * @return \DateTime
+     * @param \Boutique\UserBundle\Entity\User $user
+     *
+     * @return Commande
      */
-    public function getEmail()
+    public function setUser(\Boutique\UserBundle\Entity\User $user = null)
     {
-        return $this->email;
+        $this->user = $user;
+
+        return $this;
     }
 
-    public function setEmail($email)
+    /**
+     * Get user
+     *
+     * @return \Boutique\UserBundle\Entity\User
+     */
+    public function getUser()
     {
-        $this->email = $email ;
-        return $this ;
+        return $this->user;
     }
 }

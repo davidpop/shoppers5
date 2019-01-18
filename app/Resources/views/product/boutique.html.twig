@@ -50,9 +50,9 @@
                                 <div class="block-4 text-center border">
                                     <figure class="block-4-image">
                                         <a href="{{ path('product_show',{'id': leproduit.getId()} ) }}">
-                                            {% if leproduit.getPhotoPrincipale() %}
-                                                <img src="{{ leproduit.getPhotoPrincipale().getPath() }}"
-                                                     alt="{{ leproduit.photoPrincipale().getPath() }}"
+                                            {% if leproduit.photoPrincipale %}
+                                                <img src="/images/products/{{ leproduit.photoPrincipale.imageName }}"
+                                                     alt="{{ leproduit.photoPrincipale().getAlt() }}"
                                                      class="img-fluid"
                                                 />
                                             {% endif %}

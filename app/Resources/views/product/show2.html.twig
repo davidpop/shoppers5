@@ -30,16 +30,14 @@
     <br/>
     #}
 
-    ----
-
 
     <div class="site-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     {% if product.getPhotoPrincipale() %}
-                        <img src="{{ product.getPhotoPrincipale().getPath() }}"
-                             alt="{{ product.photoPrincipale().getPath() }}"
+                        <img src="/images/products/{{ product.photoPrincipale.imageName }}"
+                             alt="/images/products/{{ product.photoPrincipale.alt }}"
                              class="img-fluid"
                         />
                     {% endif %}
@@ -49,8 +47,6 @@
                     <h2 class="text-black">{{ product.getNom() }}</h2>
                     <p>{{ product.description() }}</p>
                     <p><strong class="text-primary h4">{{ product.getPrix() }}</strong></p>
-
-
                     <div class="mb-5">
                         <form method="POST" action="{{ path('product_addtocart',{'pid': product.getId()} ) }}">
                             {% if product.getQuantite() %}
@@ -74,11 +70,8 @@
                             {% else %}
                                 <p>Article indisponible</p>
                             {% endif %}
-
-
                         </form>
                     </div>
-
                 </div>
             </div>
             <div class="row">

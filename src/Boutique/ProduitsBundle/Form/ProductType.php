@@ -3,6 +3,7 @@
 namespace Boutique\ProduitsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,11 +21,19 @@ class ProductType extends AbstractType
         $builder->add('nom', TextType::class,
             array( 'required' => true,'constraints' => array(new Length(array('min' => 3)))))
             ->add('description')
+            ->add('categorys')
             ->add('prix', MoneyType::class)
             ->add('quantite',IntegerType::class,
                 array('constraints' => array(new Length(array('min' => 1)))))
             ->add('photoPrincipale', PhotoPrincipaleType::class)
-            ->add('categorys');
+            ->add('images', CollectionType::class,
+                [
+                    'entry_type' => ImageType::class,
+                    'entry_options' => array('label' => false),
+                    'allow_add' => true
+                ])
+
+            ;
     }/**
      * {@inheritdoc}
      */

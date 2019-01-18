@@ -1,16 +1,22 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Product creation</h1>
+    <div class="container">
+        <h1>Product creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('product_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <ul class="images"
+            data-prototype="{{ form_widget(form.images.vars.prototype)|e('html_attr') }}">
+        </ul>
+            <input type="submit" value="Create" />
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('product_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

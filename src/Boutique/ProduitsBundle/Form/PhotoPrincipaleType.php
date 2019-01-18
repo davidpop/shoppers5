@@ -5,6 +5,7 @@ namespace Boutique\ProduitsBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PhotoPrincipaleType extends AbstractType
 {
@@ -13,7 +14,7 @@ class PhotoPrincipaleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('path')
+        $builder->add('imageFile', VichImageType::class)
             ->add('alt');
     }/**
      * {@inheritdoc}

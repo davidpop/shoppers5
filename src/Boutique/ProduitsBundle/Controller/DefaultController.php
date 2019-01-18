@@ -88,73 +88,76 @@ class DefaultController extends Controller
     }
 
 
-    // 1 - on remplit un formulaire de commande
-    // il faudra l id de la cmd pour le 2
-    // 2 - on affiche le panier avec les infos en haut et le total en bas
+    // 1 - si on est connecté on préremplit le formulaire d infos pour qu'il le valide
+    // 2 - sinon on lui dmd soit de se connecter, soit de s'enregistrer puis retour au 1
+    // 3 - persistance de la commande
+    // 4 - persistance des produits-commandés
+    // 5 - affichage de la facture envoyé par mail + lien-btn('boutique.accueil')
     /**
      * @Route("/validatecart/{step}", name="validate_cart")
      */
     public function validateCartAction(Request$request, $step=1){
-        if ( $step == 1 ) {
+        if ( $step == 1 ){
+            $utilisateur = $this->getUser();
+            if (  $utilisateur == null ){
+                return $this->render('product/demande_connexion.html.twig');
+            }
+            return $this->redirectToRoute('validate_cart',['step'=>2]);
+        }
+        /*****************************************************************/
+        /*****************************************************************/
+        if ( $step == 2 ) {
+
+            // on va persister la cmd et les produits commandés
+            // et effacer le panier
             $user = $this->getUser();
 
-            dump($user);
-            exit(1);
-            // si on n est pas connecté on redirige vers le formLogin
-            // si les infos user sont incomplètes, on lui affiche le formUser
-            // sinon
-
             $cmd = new Commande();
+            $cmd->setUser($user);
             $formCmd = $this->createForm(CommandeType::class, $cmd);
             $formCmd->handleRequest($request);
 
             if ($formCmd->isSubmitted() && $formCmd->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($cmd);
-                $em->flush();
+//                $em->flush();
                 $this->get('session')->set('cid', $cmd->getId() );
-                return $this->redirectToRoute('validate_cart',['step'=>2]);
+                ///
+                $cart = $this->get('session')->get('cart');
+                $cid = $this->get('session')->get('cid');
+                $em = $this->getDoctrine()->getManager();
+
+                foreach ($cart as $clef => $prod_table) {
+                    $produit = $em->getRepository(Product::class)
+                        ->find($prod_table['id']);
+                    $c = $em->getRepository(Commande::class)
+                        ->find($cid);
+                    $produitCommande = new ProductCommande();
+                    $produitCommande->setPrix($produit->getPrix() * $prod_table['qte']);
+                    $produitCommande->setProduct($produit);
+                    $produitCommande->setCommande($c);
+                    $produitCommande->setQuantite($prod_table['qte']);
+                    $em->persist($produitCommande);
+                    $this->get('session')->remove('cart');
+                    // $this->get('session')->clear();
+                }
+                $em->flush();
+                ///
+                return $this->redirectToRoute('validate_cart',['step'=>3]);
             }
 
             return $this->render('product/simple.html.twig',
-                array('f' => $formCmd->createView(), 'panier_taille'=> $this->getSizeOfCart() )
+                array('f' => $formCmd->createView(),
+                    'panier_taille'=> $this->getSizeOfCart() )
             );
 
 
 
         }
-        if ( $step == 2) {
-            $cart = $this->get('session')->get('cart');
-            $cid = $this->get('session')->get('cid');
-            $em = $this->getDoctrine()->getManager();
-
-            foreach ($cart as $clef => $prod_table) {
-                $produit = $em->getRepository(Product::class)->find($prod_table['id']);
-                $c = $em->getRepository(Commande::class)->find($cid);
-                $produitCommande = new ProductCommande();
-                $produitCommande->setPrix($produit->getPrix() * $prod_table['qte']);
-                $produitCommande->setProduct($produit);
-                $produitCommande->setCommande($c);
-                $produitCommande->setQuantite($prod_table['qte']);
-
-                /*
-                dump($cart);
-                dump('prix : '. $produit->getPrix() );
-                dump('qte  : '. $prod_table['qte'] );
-                dump($cid);
-                dump($produitCommande);
-                dump($produit);*/
-
-                $em->persist($produitCommande);
-                $this->get('session')->remove('cart');
-                // $this->get('session')->clear();
-            }
-            $em->flush();
-            return $this->redirectToRoute('validate_cart',['step'=>3]);
-        }
         if ( $step == 3 ){
 
 //            dump( $this->get('session'));
+            $utilisateur = $this->getUser();
 
             $laCommande = $this->getDoctrine()
                 ->getRepository(Commande::class)
@@ -174,15 +177,21 @@ class DefaultController extends Controller
                 $tableau[] = array('pc'=>$lePC, 'p' => $leProduit);
             }
 
-            dump( $tableau );
-  //          exit(1);
 
             // envoi de l email
-            $contenu = $this->render('product/product_commande.html.twig',
-                array( 'cmd' => $laCommande, 'tableau' => $tableau, 'prix' => $prixTotal )
+            $contenu = $this->render('product/mail_commande.html.twig',
+                array( 'cmd' => $laCommande,
+                    'tableau' => $tableau,
+                    'prix' => $prixTotal,
+                    'user' => $utilisateur
+                    )
             );
+/*
+            dump($tableau);
+            die("");
+*/
             $this->sendEmail(
-                $laCommande->getEmail(), 'davidpopotte@gmail.com',
+                $utilisateur->getEmail(), 'davidpopotte@gmail.com',
                 'commande n°'.$laCommande->getId(),
                 $contenu
             );
@@ -193,7 +202,8 @@ class DefaultController extends Controller
                 array(
                     'cmd' => $laCommande,
                     'tableau' => $tableau,
-                    'prix' => $prixTotal
+                    'prix' => $prixTotal,
+                    'user' => $utilisateur
                 )
             );
         }

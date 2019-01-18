@@ -32,19 +32,20 @@
                 <h3 class="text-center">Commande N° {{ cmd.id }}</h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-md-3 offset-md-9" >
-                {{ cmd.nom }}, {{ cmd.prenom }}
+                {{ user.nom }}, {{ user.prenom }}<br/>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-md-3 offset-md-9" >
-                {{ cmd.adresse }}, {{ cmd.ville }}, {{ cmd.codePostal }}
+                {{ user.adresse }}, {{ user.ville }}, {{ user.codePostal }}<br/>
             </div>
         </div>
 
+        <br/>
         <div class="row mb-5">
-            <table class="table table-bordered">
+            <table class="table table-bordered" border="1" width="100%">
                 <thead>
                 <tr>
                     <th>Article</th>

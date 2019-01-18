@@ -30,7 +30,7 @@ class ProductController extends Controller
         $products = $em->getRepository('BoutiqueProduitsBundle:Product')->findAll();
 
         return $this->render('product/index.html.twig', array(
-            'products' => $products, 'panier_taille' => $this->getSizeOfCart()
+            'products' => $products, 'panier_taille' => 0
         ));
     }
     /**

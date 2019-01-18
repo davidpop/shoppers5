@@ -38,6 +38,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+
     form_themes: ['bootstrap_4_layout.html.twig']
 
 
@@ -92,3 +93,21 @@ fos_user:
                 type: Boutique\UserBundle\Form\ProfileFormType
 
 
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            uri_prefix: /images/products
+            upload_destination: '%kernel.project_dir%/web/images/products'
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        product_images:
+            uri_prefix: /images/products
+            upload_destination: '%kernel.project_dir%/web/images/products'
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
