@@ -3,13 +3,17 @@
 namespace Boutique\ProduitsBundle\Controller;
 
 use Boutique\ProduitsBundle\Entity\Product;
+use FOS\RestBundle\View\View;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use FOS\RestBundle\Controller\Annotations as Rest;
 
 /**
  * Product controller.
@@ -33,6 +37,63 @@ class ProductController extends Controller
             'products' => $products, 'panier_taille' => 0
         ));
     }
+
+
+    /**
+     * @Rest\Get("/produits")
+     * @Rest\View()
+     */
+    public function getProduitsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository('BoutiqueProduitsBundle:Product')->findAll();
+        /*
+        $res = array();
+        foreach ($products as $product)
+            $res[] = array(
+                'id' => $product->getId(),
+                'nom' => $product->getNom(),
+                'prix' => $product->getPrix(),
+                'description' => $product->getDescription(),
+                'image' => $product->getPhotoPrincipale()->getImageName()
+            );
+        */
+        //$viewHandler = $this->get('fos_rest.view_handler');
+        $view = View::create($products);
+        $view->setFormat('json');
+        // dans le config.yml, on a defini le handler donc
+        //return $viewHandler->handle($view);
+        return $view ;
+    }
+
+    /**
+     * @Rest\Get("/produits/{id}")
+     * @Rest\View()
+     */
+    public function getProduitAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('BoutiqueProduitsBundle:Product')->find($id);
+
+        if ( $product ) {
+            $res = array(
+                'id' => $product->getId(),
+                'nom' => $product->getNom(),
+                'prix' => $product->getPrix(),
+                'description' => $product->getDescription(),
+                'image' => $product->getPhotoPrincipale()->getImageName()
+            );
+            $viewHandler = $this->get('fos_rest.view_handler');
+            $view = View::create($res);
+            $view->setFormat('json');
+            return $view ;
+        } else
+            return new JsonResponse(
+                    ['message' => 'Product not found'],
+                    Response::HTTP_NOT_FOUND
+            );
+    }
+
     /**
      * @Route("/search", name="product_search")
      *
@@ -219,6 +280,7 @@ class ProductController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
+
 
 
 }
