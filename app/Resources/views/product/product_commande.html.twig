@@ -32,6 +32,17 @@
                 {{ user.adresse }}, {{ user.ville }}, {{ user.codePostal }}
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                {% for label, messages in app.flashes(['warning', 'error']) %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
 
         <div class="row mb-5">
             <table class="table table-bordered">

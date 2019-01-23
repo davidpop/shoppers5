@@ -1,0 +1,67 @@
+
+home:
+  home:         home
+  about:        about
+  shop:         shop
+  contact:      contact
+  search:       search
+  ourProducts:  Our products
+  urcart:       Your cart
+  register:     register
+  login:        Login
+  logout:       Logout
+  lang:         Changer language
+  freeshp:      Free shipping
+  customsup:    Customer Support
+
+login:
+  username: username
+  password: password
+  remember: remember me
+
+product:
+  name:          product
+  description:  description
+  categories:   categories
+  addToCart:    Add to cart
+  price:        price
+  qte:          quantity
+  imgMain:      main picture
+  list:         products list
+  create:       Create a new product
+  creation:     Product creation
+
+category:
+  list:         categories list
+  creation:     Category creation
+  name:         category
+  nameEn:       version anglaise
+  description:  description
+  create:       Create a new category
+
+crud:
+  back:       Retour à la liste
+
+cart:
+  image:      image
+  product:    product
+  price:      price
+  qty:        quantity
+  total:      total
+  rem:        remove
+  validate:   validate the cart
+  empty:      empty the cart
+  updateP:    update the price
+  isEmpty:    Your cart is empty !
+  back2shop:  Back to the shop
+
+user:
+  name:       Lastname
+  fname:      Firstname
+  email:      Email
+  subject:    Subject
+  snd:        Send Message
+  msg:        Message
+  address:    Address
+  city:       City
+  zipcode:    Zip Code

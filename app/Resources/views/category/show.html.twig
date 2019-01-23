@@ -1,20 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
     <h1>Category</h1>
 
     <table>
+        <thead>
+            <th>Id</th>
+            <th>{{ 'category.name' | trans }}</th>
+            <th>{{ 'category.nameEn' | trans }}</th>
+            <th>{{ 'category.description' | trans }}</th>
+            <th>Id</th>
+        </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ category.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
                 <td>{{ category.nom }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
+                <td>{{ category.trad }}</td>
                 <td>{{ category.description }}</td>
             </tr>
         </tbody>
@@ -22,7 +23,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('category_index') }}">Back to the list</a>
+            <a href="{{ path('category_index') }}">{{ 'category.back' | trans }}</a>
         </li>
         <li>
             <a href="{{ path('category_edit', { 'id': category.id }) }}">Edit</a>

@@ -3,6 +3,7 @@
 namespace Boutique\ProduitsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,7 +17,7 @@ class ProductCommandeType extends AbstractType
         $builder->add('quantite')
             ->add('product')
             ->add('commande')
-            ->add('prix');
+            ->add('prix', MoneyType::class);
     }/**
      * {@inheritdoc}
      */

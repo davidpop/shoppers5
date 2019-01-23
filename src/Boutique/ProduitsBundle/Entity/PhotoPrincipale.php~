@@ -13,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Table(name="photo_principale")
  * @ORM\Entity(repositoryClass="Boutique\ProduitsBundle\Repository\PhotoPrincipaleRepository")
  *
+ * @ORM\Entity
  * @Vich\Uploadable
  */
 class PhotoPrincipale
@@ -42,12 +43,6 @@ class PhotoPrincipale
      */
     private $imageName;
 
-    /**
-     * @ORM\Column(type="integer")
-     *
-     * @var integer
-     */
-    private $imageSize;
 
     /**
      * @var string
@@ -97,13 +92,61 @@ class PhotoPrincipale
         return $this->imageName;
     }
 
-    public function setImageSize(?int $imageSize): void
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
     {
-        $this->imageSize = $imageSize;
+        return $this->id;
     }
 
-    public function getImageSize(): ?int
+    /**
+     * Set alt
+     *
+     * @param string $alt
+     *
+     * @return PhotoPrincipale
+     */
+    public function setAlt($alt)
     {
-        return $this->imageSize;
+        $this->alt = $alt;
+
+        return $this;
+    }
+
+    /**
+     * Get alt
+     *
+     * @return string
+     */
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return PhotoPrincipale
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

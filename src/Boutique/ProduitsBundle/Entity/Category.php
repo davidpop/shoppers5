@@ -39,6 +39,19 @@ class Category
 
     /**
      * @var string
+     * @ORM\Column(name="trad", type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 255,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
+     */
+    private $trad ;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
@@ -77,6 +90,29 @@ class Category
     public function getNom()
     {
         return $this->nom;
+    }
+    /**
+     * Set nom
+     *
+     * @param string $trad
+     *
+     * @return Category
+     */
+    public function setTrad($trad)
+    {
+        $this->trad = $trad;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getTrad()
+    {
+        return $this->trad;
     }
 
     /**

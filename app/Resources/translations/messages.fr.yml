@@ -1,0 +1,67 @@
+
+home:
+  home:         accueil
+  about:        à propos
+  shop:         boutique
+  contact:      contact
+  search:       rechercher
+  ourProducts:  Nos produits
+  urcart:       Votre panier
+  register:     S'enregistrer
+  login:        Se Connecter
+  logout:       Se Deconnecter
+  lang:         Changer de langue
+  freeshp:      Livaison gratuite
+  customsup:    Support Client
+
+login:
+  username: nom d'utilisateur
+  password: mot de passe
+  remember: se souvenir de moi
+
+product:
+  name:         nom du produit
+  description:  description
+  categories:   les catégories
+  addToCart:    Ajouter au panier
+  price:        prix
+  qte:          quantité
+  imgMain:      photo principale
+  list:         liste des produits
+  create:       Crée un nouveau produit
+  creation:     Creation de produits
+
+category:
+  list:         liste des catégories
+  name:         titre de la catégorie
+  nameEn:       english name
+  creation:     Ajout d'une nouvelle categorie
+  description:  description
+  create:       Créer une nouvelle catégorie
+
+crud:
+  back:       Retour à la liste
+
+cart:
+  image:      aperçu
+  product:    produit
+  price:      prix
+  qty:        quantité
+  total:      total
+  rem:        retirer
+  validate:   valider le panier
+  empty:      vider le panier
+  updateP:    recalculer
+  isEmpty:    Votre panier est vide !
+  back2shop:  Revenir aux produits
+
+user:
+  name:       Nom de famille
+  fname:      Prénom
+  email:      Adresse mail
+  subject:    Sujet
+  msg:        Message
+  snd:        Envoyer
+  address:    Adresse
+  city:       Ville
+  zipcode:    Code Postal

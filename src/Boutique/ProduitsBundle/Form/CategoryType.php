@@ -17,8 +17,29 @@ class CategoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom', TextType::class,
-            array( 'required' => true,'constraints' => array(new Length(array('min' => 3)))))
-            ->add('description', TextareaType::class, array('required'=>false) );
+                array(
+                    'label' => 'category.name',
+                    'required' => true,
+                    'constraints' => array(
+                            new Length(array('min' => 3))
+                            )
+                    )
+                )
+            ->add('trad', TextType::class,
+                array(
+                    'label' => 'category.nameEn',
+                    'required' => true,
+                    'constraints' => array(
+                        new Length(array('min' => 3))
+                    )
+                )
+            )
+            ->add('description', TextareaType::class,
+                array(
+                    'label' => 'category.description',
+                    'required'=>false
+                )
+            );
     }/**
      * {@inheritdoc}
      */

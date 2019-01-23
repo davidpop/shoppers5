@@ -70,14 +70,16 @@ class Product
      */
     private $photoPrincipale ;
 
-
-
     /**
      *
      * @ORM\ManyToMany(targetEntity="Boutique\ProduitsBundle\Entity\Category")
      */
     private $categorys ;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Image", mappedBy="product", cascade={"persist","remove"})
+     */
+    private $images;
 
     /**
      * Get id
@@ -189,7 +191,8 @@ class Product
      */
     public function __construct()
     {
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->images = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -215,7 +218,6 @@ class Product
     {
         return $this->photoPrincipale;
     }
-
 
     /**
      * Add category
@@ -250,4 +252,39 @@ class Product
     {
         return $this->categorys;
     }
+    /**
+     * Add image
+     *
+     * @param \Boutique\ProduitsBundle\Entity\Image $image
+     *
+     * @return Product
+     */
+    public function addImage(Image $image)
+    {
+        $this->images[] = $image;
+        return $this;
+    }
+    /**
+     * Remove image
+     *
+     * @param \Boutique\ProduitsBundle\Entity\Image $image
+     */
+    public function removeImage(Image $image)
+    {
+        $this->images->removeElement($image);
+    }
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    public function __toString() {
+        return $this->nom;
+    }
+
 }

@@ -12,22 +12,22 @@
     </div>
 </div>
 
-    {{ dump() }}
+    {# dump() #}
 
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
+            {% if ps %}
                 <div class="site-blocks-table">
-                    {% if ps %}
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th class="product-thumbnail">Image</th>
-                            <th class="product-name">Product</th>
-                            <th class="product-price">Price</th>
-                            <th class="product-quantity">Quantity</th>
-                            <th class="product-total">Total</th>
-                            <th class="product-remove">Remove</th>
+                            <th class="product-thumbnail">{{ 'cart.image' | trans }}</th>
+                            <th class="product-name">{{ 'cart.product' | trans }}</th>
+                            <th class="product-price">{{ 'cart.price' | trans }}</th>
+                            <th class="product-quantity">{{ 'cart.qty' | trans }}</th>
+                            <th class="product-total">{{ 'cart.total' | trans }}</th>
+                            <th class="product-remove">{{ 'cart.rem' | trans }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@
                             {% for p in ps %}
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="{{ p['p'].getPhotoPrincipale().getPath() }}" alt="Image" class="img-fluid">
+                                        <img src="/images/products/{{ ( p['p'].photoPrincipale.imageName ) }}" alt="Image" class="img-fluid">
                                     </td>
                                     <td class="product-name">
                                         <h2 class="h5 text-black">{{ p['p'].nom }}</h2>
@@ -80,29 +80,35 @@
                         <tfoot>
                             <tr>
                                 <td colspan="6">
-                                    <a href="{{ path('recalc') }}"
-                                       class="buy-now btn btn-sm btn-warning float-right">
-                                       recalculer
+                                    <a href="{{ path('validate_cart') }}"
+                                       class="buy-now btn btn-sm btn-primary float-right">
+                                        {{ 'cart.validate' | trans }}
                                     </a>
 
                                     <a href="{{ path('reset_cart') }}"
                                         class="buy-now btn btn-sm btn-danger float-right">
-                                            Vider le panier
+                                        {{ 'cart.empty' | trans }}
                                     </a>
 
-                                    <a href="{{ path('validate_cart') }}"
-                                        class="buy-now btn btn-sm btn-primary float-right">
-                                            Valider le panier
+
+                                    <a href="{{ path('recalc') }}"
+                                       class="buy-now btn btn-sm btn-warning float-right">
+                                        {{ 'cart.updateP' | trans }}
                                     </a>
                                 </td>
                             </tr>
                         </tfoot>
                     </table>
-                    {%  else %}
-                        <h3 class="text-center">Votre panier est vide !</h3>
-                        <h4><a href="{{ path('boutique.accueil') }}">Revenir aux produit</a></h4>
-                    {% endif %}
                 </div>
+            {%  else %}
+                <div clas="col-md-12 text-center">
+                    <p>{{ 'cart.isEmpty' | trans }}</p>
+                    <br/><br/>
+                    <h4>
+                        <a href="{{ path('boutique.accueil') }}">{{ 'cart.back2shop' | trans }}</a>
+                    </h4>
+                </div>
+            {% endif %}
             </form>
         </div>
     </div>

@@ -1,16 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Category creation</h1>
+    <h1>{{ 'category.creation' | trans }}</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="{{ 'product.create' | trans }}" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('category_index') }}">Back to the list</a>
+            <a href="{{ path('category_index') }}">{{ 'crud.back' | trans }}</a>
         </li>
     </ul>
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace Boutique\ProduitsBundle\Entity;
 
 use Boutique\UserBundle\Entity\User;
+use Doctrine\DBAL\Types\BooleanType;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Tests\StringableObject;
 
@@ -36,6 +37,25 @@ class Commande
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @var bool
+     * @ORM\Column(name="payment_status", type="boolean")
+     */
+    private $paymentStatus ;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="montant", type="float")
+     */
+    private $montant ;
+
+    /**
+     * @var String
+     * @ORM\Column(name="charge_id", type="string",  nullable=true)
+     */
+    private $chargeId ;
 
 
     /**
@@ -74,7 +94,10 @@ class Commande
 
     public function __construct()
     {
+
         $this->createdAt = new \DateTime();
+        $this->paymentStatus = false ;
+
     }
 
 
@@ -100,5 +123,77 @@ class Commande
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set paymentStatus
+     *
+     * @param boolean $paymentStatus
+     *
+     * @return Commande
+     */
+    public function setPaymentStatus($paymentStatus)
+    {
+        $this->paymentStatus = $paymentStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentStatus
+     *
+     * @return boolean
+     */
+    public function getPaymentStatus()
+    {
+        return $this->paymentStatus;
+    }
+
+    /**
+     * Set chargeId
+     *
+     * @param integer $chargeId
+     *
+     * @return Commande
+     */
+    public function setChargeId($chargeId)
+    {
+        $this->chargeId = $chargeId;
+
+        return $this;
+    }
+
+    /**
+     * Get chargeId
+     *
+     * @return integer
+     */
+    public function getChargeId()
+    {
+        return $this->chargeId;
+    }
+
+    /**
+     * Set montant
+     *
+     * @param float $montant
+     *
+     * @return Commande
+     */
+    public function setMontant($montant)
+    {
+        $this->montant = $montant;
+
+        return $this;
+    }
+
+    /**
+     * Get montant
+     *
+     * @return float
+     */
+    public function getMontant()
+    {
+        return $this->montant;
     }
 }

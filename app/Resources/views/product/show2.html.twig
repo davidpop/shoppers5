@@ -65,7 +65,7 @@
                                 <p class="block-4-text p-4">
                                     <input type="submit"
                                            class="buy-now btn btn-sm btn-primary"
-                                           value="Ajouter au panier">
+                                           value="{{ 'product.addToCart' | trans }}">
                                 </p>
                             {% else %}
                                 <p>Article indisponible</p>
@@ -78,8 +78,8 @@
                 {% if images %}
                     {% for image in images %}
                         <div class="col-md-6">
-                            <img src="{{ image.getPath() }}"
-                                 alt="{{ image.getAlt() }}"
+                            <img src="{{ image.imageName }}"
+                                 alt="{{ image.alt }}"
                                  class="img-responsive"
                             />
                         </div>

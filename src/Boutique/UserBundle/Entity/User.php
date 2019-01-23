@@ -87,7 +87,11 @@ class User extends BaseUser
      */
     protected $codePostal;
 
-
+    /**
+     * @ORM\Column(name="charge_id", type="string", length=255, nullable=true)
+     */
+    protected $chargeId;
+    
 
     public function __construct()
     {
@@ -229,4 +233,28 @@ class User extends BaseUser
         return $this;
     }
     
+
+    /**
+     * Set chargeId
+     *
+     * @param string $chargeId
+     *
+     * @return User
+     */
+    public function setChargeId($chargeId)
+    {
+        $this->chargeId = $chargeId;
+
+        return $this;
+    }
+
+    /**
+     * Get chargeId
+     *
+     * @return string
+     */
+    public function getChargeId()
+    {
+        return $this->chargeId;
+    }
 }

@@ -1,0 +1,23 @@
+{% extends('layout.html.twig') %}
+
+{% block body %}
+
+    <div class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-0"><a href="{{ path('accueil') }}">Accueil</a></div>
+            </div>
+            <div class="col-md-12 mb-0">
+                {% for label, messages in app.flashes(['warning', 'error']) %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

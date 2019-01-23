@@ -3,6 +3,7 @@
 namespace Boutique\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser ;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +22,13 @@ class User extends BaseUser
     protected $id;
 
     /**
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 64,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -28,6 +36,13 @@ class User extends BaseUser
     protected $nom;
 
     /**
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 64,
+     *      minMessage  = "Votre saisie est incorrecte !",
+     *      maxMessage  = "Votre saisie est incorrecte !"
+     * )
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
@@ -35,6 +50,11 @@ class User extends BaseUser
     protected $prenom;
 
     /**
+     *
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Votre saisie est incorrecte !"
+     * )
      * @var string
      *
      * @ORM\Column(name="adresse", type="text")
@@ -42,6 +62,11 @@ class User extends BaseUser
     protected $adresse;
 
     /**
+     *
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Votre saisie est incorrecte !"
+     * )
      * @var string
      *
      * @ORM\Column(name="ville", type="string", length=255)
@@ -49,13 +74,24 @@ class User extends BaseUser
     protected $ville;
 
     /**
+     *
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 5,
+     *      minMessage = "Le Code Postal est sur 5 chiffres",
+     *      maxMessage = "Le Code Postal est sur 5 chiffres"
+     * )
      * @var string
      *
      * @ORM\Column(name="codePostal", type="string", length=255)
      */
     protected $codePostal;
 
-
+    /**
+     * @ORM\Column(name="charge_id", type="string", length=255, nullable=true)
+     */
+    protected $chargeId;
+    
 
     public function __construct()
     {

@@ -23,9 +23,12 @@ class ProfileFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')
-            ->add('adresse')->add('ville')
-            ->add('codePostal');
+        $builder->add('nom', TextType::class,array('label' => 'user.name'))
+            ->add('prenom', TextType::class, array('label' => 'user.fname'))
+            ->add('adresse', TextType::class, array('label' => 'user.address'))
+            ->add('ville', TextType::class, array('label' => 'user.city'))
+            ->add('codePostal', TextType::class, array('label' => 'user.zipcode')
+            );
     }
 
     public function getParent()

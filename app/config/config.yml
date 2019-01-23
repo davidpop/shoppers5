@@ -7,10 +7,14 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    payment:
+        currency: EUR
+        decimal: true
+        # premium_amount: 1
 
 framework:
     #esi: ~
-    translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['en','fr'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'

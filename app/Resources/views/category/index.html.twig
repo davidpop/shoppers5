@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Categories list</h1>
+                <h1>{{ 'category.list' | trans }}</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <table>
+                <table class="table table-responsive table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -24,6 +24,7 @@
                         <tr>
                             <td><a href="{{ path('category_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
                             <td>{{ category.nom }}</td>
+                            <td>{{ category.trad }}</td>
                             <td>{{ category.description }}</td>
                             <td>
                                 <ul>
@@ -42,7 +43,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('category_new') }}">Create a new category</a>
+            <a href="{{ path('category_new') }}">{{ 'category.create' | trans }}</a>
         </li>
     </ul>
             </div>

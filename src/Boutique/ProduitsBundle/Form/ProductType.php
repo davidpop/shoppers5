@@ -19,13 +19,22 @@ class ProductType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom', TextType::class,
-            array( 'required' => true,'constraints' => array(new Length(array('min' => 3)))))
-            ->add('description')
-            ->add('categorys')
-            ->add('prix', MoneyType::class)
+                        array(
+                            'required' => true,
+                            'label' => 'product.name',
+                            'constraints' => array(new Length(array('min' => 3)))
+                        )
+                )
+            ->add('description', TextType::class,
+                        array('label' => 'product.description')
+            )
+            ->add('categorys',null, array('label' => 'product.categories'))
+            ->add('prix', MoneyType::class, array('label' => 'product.price'))
             ->add('quantite',IntegerType::class,
-                array('constraints' => array(new Length(array('min' => 1)))))
-            ->add('photoPrincipale', PhotoPrincipaleType::class)
+                array('label' => 'product.qte','constraints' => array(new Length(array('min' => 1)))))
+            ->add('photoPrincipale', PhotoPrincipaleType::class,
+                array('label' => 'product.imgMain')
+                )
             ->add('images', CollectionType::class,
                 [
                     'entry_type' => ImageType::class,

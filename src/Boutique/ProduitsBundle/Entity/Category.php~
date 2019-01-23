@@ -39,6 +39,11 @@ class Category
 
     /**
      * @var string
+     */
+    private $trad ;
+
+    /**
+     * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */

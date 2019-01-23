@@ -1,15 +1,22 @@
 boutique_front:
     resource: "@BoutiqueFrontBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}
+    defaults: { _locale: fr }
+    requirements:
+        _locale: fr|en
 
 boutique_produits:
     resource: "@BoutiqueProduitsBundle/Controller/"
     type:     annotation
-    prefix:   /boutique
+    prefix:   /{_locale}/boutique
+    defaults: { _locale: fr }
+    requirements:
+        _locale: fr|en
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /{_locale}
 
 produits:
     type: rest
@@ -18,3 +25,4 @@ produits:
 categories:
     type: rest
     resource: Boutique\ProduitsBundle\Controller\CategoryRestController
+

@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-        <h1>Product creation</h1>
+        <h1>{{ 'product.creation' | trans }}</h1>
 
         {{ form_start(form) }}
             {{ form_widget(form) }}
@@ -15,7 +15,7 @@
 
         <ul>
             <li>
-                <a href="{{ path('product_index') }}">Back to the list</a>
+                <a href="{{ path('product_index') }}">{{ 'crud.back' | trans }}</a>
             </li>
         </ul>
     </div>

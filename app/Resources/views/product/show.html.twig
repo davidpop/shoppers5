@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     <p class="block-4-text p-4">
-                        <input type="submit" class="buy-now btn btn-sm btn-primary" value="Ajouter au panier">
+                        <input type="submit" class="buy-now btn btn-sm btn-primary" value="{{ 'product.addToCart' | trans }}">
                     </p>
 
                     </form>
@@ -72,7 +72,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('product_index') }}">Back to the list</a>
+            <a href="{{ path('product_index') }}">{{ 'crud.back' | trans }}</a>
         </li>
         <li>
             <a href="{{ path('product_edit', { 'id': product.id }) }}">Edit</a>

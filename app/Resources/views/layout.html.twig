@@ -23,7 +23,7 @@
                     <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
                         <form action="{{ path('product_search') }}" method="POST" class="site-block-top-search">
                             <span class="icon icon-search2"></span>
-                            <input type="text" class="form-control border-0" placeholder="Search" name="terme" autocomplete="off">
+                            <input type="text" class="form-control border-0" placeholder="{{ 'home.search' | trans | capitalize }}" name="terme" autocomplete="off">
                         </form>
                     </div>
                     <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
@@ -40,15 +40,25 @@
                                 </li>
                                 <li>
                                     <a href="{{ path('fos_user_security_logout') }}"
-                                        title="Se deconnecter"><span class="icon icon-person text-danger"></span></a>
+                                        title="{{ 'home.logout' | trans }}">
+                                        <span class="icon icon-person text-danger"></span>
+                                    </a>
                                 </li>
                                 {% else %}
-                                    <a href="{{ path('fos_user_security_login') }}"><span class="icon icon-person"></span></a>
-                                {% endif %}
-
-                                <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                                 <li>
-                                    <a href="{{ path('cart') }}" class="site-cart" title="Votre panier">
+                                    <a href="{{ path('fos_user_security_login') }}"
+                                       title="{{ 'home.login' | trans }}">
+                                        <span class="icon icon-person"></span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('fos_user_registration_register') }}"
+                                       title="{{ 'home.register' | trans }}"
+                                        ><span class="icon icon-user-plus"></span></a>
+                                </li>
+                                {% endif %}
+                                <li>
+                                    <a href="{{ path('cart') }}" class="site-cart"
+                                       title="{{ 'home.urcart' | trans }}">
                                         <span class="icon icon-shopping_cart"></span>
                                         <!-- taille du panier -->
                                         <span class="count">
@@ -59,6 +69,18 @@
                                             {% endif %}
                                         </span>
                                     </a>
+                                </li>
+                                <li>
+                                    {% set routeParams = app.request.get('_route_params') %}
+                                    {% if routeParams['_locale'] == 'fr' %}
+                                        {% set routeParams = routeParams|merge({'_locale': 'en'}) %}
+                                        {% set lng = 'en' %}
+                                    {% else %}
+                                        {%set routeParams = routeParams|merge({'_locale': 'fr'}) %}
+                                        {% set lng = 'fr' %}
+                                    {% endif %}
+                                    <a href="{{ path(app.request.get('_route'), routeParams) }}" title="{{ 'home.lang' | trans }}">{{ lng }}</a>
+                                    <!-- <span class="icon icon-map"></span> -->
                                 </li>
                                 <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                             </ul>
@@ -72,32 +94,17 @@
                 <ul class="site-menu js-clone-nav d-none d-md-block">
                     <!-- <li class="has-children"> -->
                     <li>
-                        <a href="{{ path('accueil') }}">Accueil</a>
-                        <!--
-                        <ul class="dropdown">
-                            <li><a href="#">Menu One</a></li>
-                            <li><a href="#">Menu Two</a></li>
-                            <li><a href="#">Menu Three</a></li>
-                            <li class="has-children">
-                                <a href="#">Sub Menu</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Menu One</a></li>
-                                    <li><a href="#">Menu Two</a></li>
-                                    <li><a href="#">Menu Three</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        -->
+                        <a href="{{ path('accueil') }}">{{ 'home.home' | trans }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('about') }}">à propos</a>
+                        <a href="{{ path('about') }}">{{ 'home.about' | trans }}</a>
                     </li>
-                    <li><a href="{{ path('boutique.accueil') }}">Boutique</a></li>
+                    <li><a href="{{ path('boutique.accueil') }}">{{ 'home.shop' | trans }}</a></li>
                     <!--
                     <li><a href="#">Catalogue</a></li>
                     <li><a href="#">Arrivages</a></li>
                     -->
-                    <li><a href="{{ path("contact") }}">Contact</a></li>
+                    <li><a href="{{ path("contact") }}">{{ 'home.contact' | trans }}</a></li>
                 </ul>
             </div>
         </nav>
@@ -140,17 +147,20 @@
                             <li><a href="#">Software</a></li>
                         </ul>
                     </div>
+                    <div class="col-md-12">
+                        <h3 class="footer-heading mb-4">Administration</h3>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <ul class="list-unstyled">
+                            <li><a href="{{ path('category_index') }}">Categories</a></li>
+                            <li><a href="{{ path('product_index') }}">Products</a></li>
+                            <li>{{ app.user }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                 <h3 class="footer-heading mb-4">Promo</h3>
-                <!---
-                <a href="#" class="block-6">
-                    <img src="{{ asset("images/hero_1.jpg") }}" alt="Image placeholder" class="img-fluid rounded mb-4">
-                    <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-                    <p>Promo from  nuary 15 &mdash; 25, 2019</p>
-                </a>
-                -->
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="block-5 mb-5">
@@ -184,32 +194,34 @@
     </div>
 </footer>
 
-<script src="{{ asset("js/jquery-3.3.1.min.js") }}"></script>
-<script src="{{ asset("js/jquery-ui.js") }}"></script>
-<script src="{{ asset("js/popper.min.js") }}"></script>
-<script src="{{ asset("js/bootstrap.min.js") }}"></script>
-<script src="{{ asset("js/owl.carousel.min.js") }}"></script>
-<script src="{{ asset("js/jquery.magnific-popup.min.js") }}"></script>
-<script src="{{ asset("js/aos.js") }}"></script>
-<script src="{{ asset("js/main.js") }}"></script>
-<script>
-    var $collectionHolder;
-    // setup an "add a tag" link
-    var $addImageButton = $('<button type="button" class="add_img_link btn btn-success">Ajouter une image</button>');
-    var $newLinkLi = $('<li></li>').append($addImageButton);
-    jQuery(document).ready(function() {
-        // Get the ul that holds the collection of tags
-        $collectionHolder = $('ul.images');
-        // add the "add a tag" anchor and li to the tags ul
-        $collectionHolder.append($newLinkLi);
-        // count the current form inputs we have (e.g. 2), use that as the new
-        // index when inserting a new item (e.g. 2)
-        $collectionHolder.data('index', $collectionHolder.find(':input').length);
-        $addImageButton.on('click', function(e) {
-            // add a new tag form (see next code block)
-            $addImageForm($collectionHolder, $newLinkLi);
+    <script src="{{ asset("js/jquery-3.3.1.min.js") }}"></script>
+    <script src="{{ asset("js/jquery-ui.js") }}"></script>
+    <script src="{{ asset("js/popper.min.js") }}"></script>
+    <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+    <script src="{{ asset("js/owl.carousel.min.js") }}"></script>
+    <script src="{{ asset("js/jquery.magnific-popup.min.js") }}"></script>
+    <script src="{{ asset("js/aos.js") }}"></script>
+    <script src="{{ asset("js/main.js") }}"></script>
+    {% block js %} {% endblock %}
+    <script>
+        var $collectionHolder;
+        // setup an "add a tag" link
+        var $addImageButton = $('<button type="button" class="add_img_link btn btn-success">Ajouter une image</button>');
+        var $newLinkLi = $('<li></li>').append($addImageButton);
+        jQuery(document).ready(function() {
+            // Get the ul that holds the collection of tags
+            $collectionHolder = $('ul.images');
+            // add the "add a tag" anchor and li to the tags ul
+            $collectionHolder.append($newLinkLi);
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            $collectionHolder.data('index', $collectionHolder.find(':input').length);
+            $addImageButton.on('click', function(e) {
+                // add a new tag form (see next code block)
+                $addImageForm($collectionHolder, $newLinkLi);
+            });
         });
-    });
-    </script>
+        </script>
+
 </body>
 </html>
