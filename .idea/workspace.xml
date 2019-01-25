@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc098bc-b01b-4aad-9f86-c9384398400c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/easy_admin/view_image.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/mail.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Boutique/FrontBundle/Form/ContactType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,13 +48,13 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+            <state relative-caret-position="432">
+              <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
               <folding>
                 <element signature="e#51#93#0#PHP" expanded="true" />
                 <element signature="e#909#942#1#PHP" expanded="true" />
-                <element signature="e#1721#1751#0#PHP" expanded="true" />
-                <element signature="e#2243#2276#0#PHP" expanded="true" />
+                <element signature="e#1804#1834#0#PHP" expanded="true" />
+                <element signature="e#2367#2400#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -454,12 +435,12 @@
       <workItem from="1548231929309" duration="24227000" />
       <workItem from="1548318277423" duration="41000" />
       <workItem from="1548318459912" duration="22005000" />
-      <workItem from="1548404154010" duration="25645000" />
+      <workItem from="1548404154010" duration="25948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242995000" />
+    <option name="totallyTimeSpent" value="243298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1215" height="1028" extended-state="6" />
@@ -847,7 +828,7 @@
         <state relative-caret-position="90">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
+            <element signature="e#12#28#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -906,13 +887,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+        <state relative-caret-position="432">
+          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
           <folding>
             <element signature="e#51#93#0#PHP" expanded="true" />
             <element signature="e#909#942#1#PHP" expanded="true" />
-            <element signature="e#1721#1751#0#PHP" expanded="true" />
-            <element signature="e#2243#2276#0#PHP" expanded="true" />
+            <element signature="e#1804#1834#0#PHP" expanded="true" />
+            <element signature="e#2367#2400#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

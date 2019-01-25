@@ -53,12 +53,14 @@ class DefaultController extends Controller
                             $eml = $req->request->get('c_email');
                             $msg = $req->request->get('c_message');*/
 
+//                dump( $form->getData('nom')['nom'] );
+//                exit(1);
                 // envoi de l email
                 $contenu = $this->render('front/default/mail.html.twig',
-                    array('nom' => $form->getData('nom'),
-                        'prenom' => $form->getData('prenom'),
-                        'email' => $form->getData('email'),
-                        'message' => $form->getData('message'))
+                    array('nom' => $form->getData('nom')['nom'] ,
+                        'prenom' => $form->getData('prenom')['prenom'] ,
+                        'email' => $form->getData('email')['email'] ,
+                        'message' => $form->getData('message')['message'] )
                 );
 
                 $this->sendEmail($form->getData('email'), $form->getData('email'),
