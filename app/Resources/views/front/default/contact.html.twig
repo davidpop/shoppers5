@@ -18,8 +18,12 @@
                     <h2 class="h3 mb-3 text-black">Get In Touch</h2>
                 </div>
                 <div class="col-md-7">
-
-                    <form action="#" method="post">
+                    {{ form_start(form, {'attr': {'id':'form'}}) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" id="contactSubmit" value="Envoyer" />
+                    {{ form_end(form) }}
+{#
+                    <form action="#" method="" id="form">
 
                         <div class="p-3 p-lg-5 border">
                             <div class="form-group row">
@@ -53,11 +57,12 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg-12">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="{{ 'user.snd' | trans }}">
+                                    <input type="submit" id="contactSubmit" class="btn btn-primary btn-lg btn-block" value="{{ 'user.snd' | trans }}">
                                 </div>
                             </div>
                         </div>
                     </form>
+                    #}
                 </div>
                 <div class="col-md-5 ml-auto">
                     <div class="p-4 border mb-3">
@@ -79,3 +84,25 @@
     </div>
 
 {% endblock body %}
+
+{% block js %}
+    <script>
+        $("#contactSubmit").click(function(e){
+                e.preventDefault();
+                $.ajax({
+                    method: "post",
+                    data: $("#form").serialize() ,
+                    url: '{{ path('contactform') }}',
+                    dataType: "json",
+                }).done( function(response) {
+                    console.log(response);
+                    $("#form").html("");
+                    $("#form").append(response);
+                }).fail(function(jxh,textmsg,errorThrown){
+                    console.log(textmsg);
+                    console.log(errorThrown);
+                });
+
+        });
+        </script>
+{% endblock js %}

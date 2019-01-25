@@ -34,16 +34,16 @@ use Stripe\Stripe;
                     'source' => $token,
                     'receipt_email' => $commande->getUser()->getEmail(),
                 ]);
-//                $commande->setPaymentStatus(true);
+                $commande->setPaymentStatus(true);
 //                dump($charge);
             } catch (\Stripe\Error\Base $e) {
-//                $commande->setPaymentStatus(false);
+                $commande->setPaymentStatus(false);
                 $this->logger->error(sprintf('%s exception encountered when creating a premium payment: "%s"', get_class($e), $e->getMessage()), ['exception' => $e]);
                 throw $e;
             }
             $commande->setChargeId($charge->id);
 //            $user->setPremium($charge->paid);
             $this->em->flush();
-            
+
         }
     }

@@ -2,47 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc098bc-b01b-4aad-9f86-c9384398400c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/product/paiement.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/product/paiement_succes.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/easy_admin/view_image.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/mail.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Boutique/FrontBundle/Form/ContactType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/category/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/category/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/front/default/about.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/about.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/front/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/front/default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/cart.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/cart.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/search.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/search.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/product/show2.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/product/show2.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/FrontBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Boutique/FrontBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Image.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CategoryType.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CategoryType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductCommandeType.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductCommandeType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductType.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Boutique/UserBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/ProfileFormType.php" afterPath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/ProfileFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/RegistrationType.php" afterPath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/RegistrationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Boutique/UserBundle/Form/UserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" afterPath="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,83 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="243" column="58" lean-forward="false" selection-start-line="243" selection-start-column="42" selection-end-line="243" selection-end-column="58" />
-              <folding>
-                <element signature="e#54#98#0#PHP" expanded="true" />
-                <element signature="e#5112#5140#0#PHP" expanded="true" />
-                <element signature="e#9341#9374#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product_commande.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paiement_succes.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/product/paiement_succes.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="18" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1962">
-              <caret line="202" column="41" lean-forward="false" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="41" />
-              <folding>
-                <element signature="e#3075#3141#0#PHP" expanded="false" />
-                <element signature="e#3146#3519#0#PHP" expanded="false" />
-                <marker date="1548071862255" expanded="false" signature="6524:6546" ph="product/show" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/product/search.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StripeClient.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-              <folding>
-                <element signature="e#59#103#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Commande.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="26" />
+            <state relative-caret-position="518">
+              <caret line="203" column="32" lean-forward="false" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -138,9 +45,48 @@
       <file leaf-file-name="boutique.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="53" column="115" lean-forward="false" selection-start-line="53" selection-start-column="90" selection-end-line="53" selection-end-column="115" />
+            <state relative-caret-position="702">
+              <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="280" selection-end-column="17" />
+              <folding>
+                <element signature="e#5151#5155#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+              <folding>
+                <element signature="e#51#93#0#PHP" expanded="true" />
+                <element signature="e#909#942#1#PHP" expanded="true" />
+                <element signature="e#1721#1751#0#PHP" expanded="true" />
+                <element signature="e#2243#2276#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Form/ContactType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+              <folding>
+                <element signature="e#46#86#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,6 +104,8 @@
       <find>men</find>
       <find>pro</find>
       <find>cons</find>
+      <find>rele</find>
+      <find>slider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,27 +114,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/product/simple.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/product/mail_commande.html.twig" />
-        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/PhotoPrincipaleType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/product/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" />
-        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ImageType.php" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryRestController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/front/default/about.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/show2.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductCommandeType.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Boutique/UserBundle/Form/UserType.php" />
         <option value="$PROJECT_DIR$/src/Boutique/UserBundle/Form/RegistrationType.php" />
         <option value="$PROJECT_DIR$/src/Boutique/UserBundle/Form/ProfileFormType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" />
@@ -195,28 +132,39 @@
         <option value="$PROJECT_DIR$/app/Resources/views/product/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CategoryType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/category/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/front/default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" />
         <option value="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/paiement.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/FrontBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/paiement_succes.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/cart.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/product/search.html.twig" />
-        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php" />
+        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/easy_admin/view_image.html.twig" />
+        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/front/default/mail.html.twig" />
+        <option value="$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/src/Boutique/FrontBundle/Form/ContactType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig" />
+        <option value="$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -228,10 +176,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="60" />
+    <option name="x" value="65" />
     <option name="y" value="155" />
-    <option name="width" value="1187" />
-    <option name="height" value="956" />
+    <option name="width" value="1183" />
+    <option name="height" value="940" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -249,7 +197,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,7 +226,7 @@
               <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="translations" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easy_admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
@@ -287,6 +234,23 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
@@ -312,6 +276,29 @@
               <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ProduitsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -328,7 +315,15 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ProduitsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Boutique" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ProduitsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
@@ -358,17 +353,54 @@
             <path>
               <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
               <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="var" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="var" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="cache" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
               <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easycorp" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easycorp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easyadmin-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easycorp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easyadmin-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="fifth" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fifth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easycorp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="easyadmin-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -377,13 +409,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Boutique" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Boutique/UserBundle/Form" />
       <recent name="$PROJECT_DIR$/app/Resources/FOSUserBundle/views" />
       <recent name="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Boutique" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -419,18 +451,21 @@
       <workItem from="1548058845046" duration="23231000" />
       <workItem from="1548147695777" duration="24782000" />
       <workItem from="1548231860578" duration="16000" />
-      <workItem from="1548231929309" duration="23764000" />
+      <workItem from="1548231929309" duration="24227000" />
+      <workItem from="1548318277423" duration="41000" />
+      <workItem from="1548318459912" duration="22005000" />
+      <workItem from="1548404154010" duration="25645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194841000" />
+    <option name="totallyTimeSpent" value="242995000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="60" y="155" width="1217" height="1036" extended-state="6" />
+    <frame x="65" y="-4" width="1215" height="1028" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19835392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23950617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -468,120 +503,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/about.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="79" column="15" lean-forward="true" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ImageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CommandeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductCommandeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/UserBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/UserBundle/Form/RegistrationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/UserBundle/Form/ProfileFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="55" column="117" lean-forward="false" selection-start-line="55" selection-start-column="117" selection-end-line="55" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/category/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ProductType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CategoryType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -593,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="114" column="27" lean-forward="false" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -616,7 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="106" lean-forward="false" selection-start-line="4" selection-start-column="106" selection-end-line="4" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,15 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="102" column="60" lean-forward="false" selection-start-line="102" selection-start-column="60" selection-end-line="102" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,15 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="204" column="19" lean-forward="false" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,14 +577,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2272">
           <caret line="93" column="4" lean-forward="false" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/paiement.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/show2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/cart.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1029">
+          <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CommandeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/search.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/simple.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/paiement_succes.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="66" lean-forward="false" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -700,174 +681,238 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Resources/config/services.yml">
+    <entry file="file://$PROJECT_DIR$/app/Resources/easy_admin/view_image.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml">
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/PhotoPrincipale.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="698">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="792">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="49" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/paiement.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="13" selection-end-column="24" />
+        <state relative-caret-position="723">
+          <caret line="44" column="1" lean-forward="false" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/PhotoPrincipaleType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/ImageType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/show2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/cart.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CommandeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="53" column="115" lean-forward="false" selection-start-line="53" selection-start-column="90" selection-end-line="53" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1962">
-          <caret line="202" column="41" lean-forward="false" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="41" />
-          <folding>
-            <element signature="e#3075#3141#0#PHP" expanded="false" />
-            <element signature="e#3146#3519#0#PHP" expanded="false" />
-            <marker date="1548071862255" expanded="false" signature="6524:6546" ph="product/show" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Entity/Commande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/search.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/simple.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="243" column="58" lean-forward="false" selection-start-line="243" selection-start-column="42" selection-end-line="243" selection-end-column="58" />
-          <folding>
-            <element signature="e#54#98#0#PHP" expanded="true" />
-            <element signature="e#5112#5140#0#PHP" expanded="true" />
-            <element signature="e#9341#9374#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/product_commande.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/paiement_succes.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="18" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/ServiceHandler/StripeClient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="46" column="12" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+        <state relative-caret-position="115">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="112" column="7" lean-forward="true" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="191" column="15" lean-forward="false" selection-start-line="191" selection-start-column="12" selection-end-line="191" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="203" column="32" lean-forward="false" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/about.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1458">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#59#103#0#PHP" expanded="true" />
+            <element signature="e#12#28#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/mail_commande.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="275" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Form/CommandeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Repository/ProductRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/mail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/boutique.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="280" selection-end-column="17" />
+          <folding>
+            <element signature="e#5151#5155#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/ProduitsBundle/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="291" column="53" lean-forward="false" selection-start-line="291" selection-start-column="53" selection-end-line="291" selection-end-column="53" />
+          <folding>
+            <element signature="e#1030#1062#1#PHP" expanded="true" />
+            <element signature="e#1106#1131#0#PHP" expanded="true" />
+            <element signature="e#1419#1451#1#PHP" expanded="true" />
+            <element signature="e#2343#2375#1#PHP" expanded="true" />
+            <element signature="e#3075#3141#0#PHP" expanded="false" />
+            <element signature="e#3146#3519#0#PHP" expanded="false" />
+            <element signature="e#3402#3428#0#PHP" expanded="true" />
+            <element signature="e#3777#3809#1#PHP" expanded="true" />
+            <element signature="e#3879#3905#0#PHP" expanded="true" />
+            <element signature="e#6032#6055#0#PHP" expanded="true" />
+            <element signature="e#6668#6693#0#PHP" expanded="true" />
+            <element signature="e#7503#7527#0#PHP" expanded="true" />
+            <element signature="e#9334#9366#1#PHP" expanded="true" />
+            <element signature="e#10461#10493#1#PHP" expanded="true" />
+            <marker date="1548429780626" expanded="false" signature="6524:6546" ph="product/show" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Form/ContactType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding>
+            <element signature="e#46#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/front/default/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boutique/FrontBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#51#93#0#PHP" expanded="true" />
+            <element signature="e#909#942#1#PHP" expanded="true" />
+            <element signature="e#1721#1751#0#PHP" expanded="true" />
+            <element signature="e#2243#2276#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

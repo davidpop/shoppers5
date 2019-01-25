@@ -10,7 +10,9 @@ parameters:
     payment:
         currency: EUR
         decimal: true
+    app.path.product_images: /images/products
         # premium_amount: 1
+
 
 framework:
     #esi: ~
@@ -102,7 +104,7 @@ vich_uploader:
     db_driver: orm
     mappings:
         product_image:
-            uri_prefix: /images/products
+            uri_prefix: '%app.path.product_images%'
             upload_destination: '%kernel.project_dir%/web/images/products'
 
             inject_on_load: false
@@ -122,3 +124,87 @@ fos_rest:
         include_format: false
     view:
         view_response_listener: true
+
+# app/config/config.yml
+easy_admin:
+    site_name: "myShopper"
+    list:
+        actions: ['show','edit', 'search', '-delete']
+    design:
+        brand_color: '#FFD700'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+    entities:
+        Produits:
+            class: Boutique\ProduitsBundle\Entity\Product
+            list:
+                sort: ['nom', 'ASC']
+                fields:
+                    - { property: 'nom', label: 'désignation' }
+                    - { property: 'photoPrincipale.imageName', type: 'image', label: 'image' , base_path: '%app.path.product_images%'}
+                    - { property: 'categorys', type: 'array',label: 'catégorie' }
+                    - { property: 'prix', label: 'prix unitaire' }
+                    - { property: 'quantite', label: 'stock' }
+    #                - { property: 'description', label: 'description' }
+            show:
+                fields:
+                    - { property: 'nom', label: 'désignation' }
+                    - { property: 'photoPrincipale.imageName', type: 'image', base_path: '%app.path.product_images%', label: 'image'}
+                    - { property: 'categorys', label: 'catégorie' }
+                    - { property: 'prix', label: 'prix' }
+                    - { property: 'quantite', label: 'stock' }
+                    - { property: 'images', label: 'images'}
+            form:
+                fields:
+                    - { property: 'nom', label: 'désignation' }
+                    - { property: 'description', label: 'description' }
+                    - { property: 'categorys', label: 'catégorie' }
+                    - { property: 'prix', label: 'prix' }
+                    - { property: 'quantite', label: 'stock' }
+            new:
+                fields:
+                    - { property: 'nom', label: 'désignation' }
+                    - { property: 'photoPrincipale', type: 'Boutique\ProduitsBundle\Form\PhotoPrincipaleType', base_path: '%app.path.product_images%'}
+                    - { property: 'categorys', label: 'catégorie' }
+                    - { property: 'prix', label: 'prix unitaire' }
+                    - { property: 'quantite', label: 'stock' }
+                    - { property: 'image'}
+        Categories:
+            class: Boutique\ProduitsBundle\Entity\Category
+            list:
+                sort: ['nom', 'ASC']
+                fields:
+                - { property: 'nom', label: 'titre français' }
+                - { property: 'trad', label: 'titre anglais' }
+                - { property: 'description', label: 'description' }
+            show:
+                fields:
+                - { property: 'nom', label: 'titre français' }
+                - { property: 'trad', label: 'titre anglais' }
+                - { property: 'description', label: 'description' }
+            form:
+                fields:
+                    - { property: 'nom', label: 'titre en français' }
+                    - { property: 'trad', label: 'titre en anglais' }
+                    - { property: 'description', label: 'description' }
+            new:
+                - { property: 'nom', label: 'titre en français' }
+                - { property: 'trad', label: 'titre en anglais' }
+                - { property: 'description', label: 'description' }
+
+        Utilisateurs:
+            class: Boutique\UserBundle\Entity\User
+        Photos:
+            class: Boutique\ProduitsBundle\Entity\PhotoPrincipale
+            list:
+                fields:
+                - { property: 'imageName', type: 'image', base_path: '%app.path.product_images%' }
+                - { property: 'alt', label: 'texte alternatif'}
+                - { property: 'updated_at', label: 'modifié le', type: datetime }
+            show:
+                fields:
+                - { property: 'imageName', label: 'titre français' }
+                - { property: 'alt', label: 'texte alternatif' }
+                - { property: 'updated_at', label: 'modifié le', type: datetime }

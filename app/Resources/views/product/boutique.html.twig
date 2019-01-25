@@ -33,17 +33,17 @@
                                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                         <a class="dropdown-item" href="#">Relevance</a>
-                                        <a class="dropdown-item" href="#">Name, A to Z</a>
-                                        <a class="dropdown-item" href="#">Name, Z to A</a>
+                                        <a class="dropdown-item sortable" data-crit="nom" data-ord="ASC" href="#">Name, A to Z</a>
+                                        <a class="dropdown-item sortable" data-crit="nom" data-ord="DESC" href="#">Name, Z to A</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Price, low to high</a>
-                                        <a class="dropdown-item" href="#">Price, high to low</a>
+                                        <a class="dropdown-item sortable" data-crit="prix" data-ord="ASC" href="#">Price, low to high</a>
+                                        <a class="dropdown-item sortable" data-crit="prix" data-ord="ASC"  href="#">Price, high to low</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-5">
+                    <div class="row mb-5" id="produits">
 
                         {% for leproduit in lesProduits %}
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
@@ -52,7 +52,7 @@
                                         <a href="{{ path('product_show',{'id': leproduit.getId()} ) }}">
                                             {% if leproduit.photoPrincipale %}
                                                 <img src="/images/products/{{ leproduit.photoPrincipale.imageName }}"
-                                                     alt="{{ leproduit.photoPrincipale().getAlt() }}"
+                                                     alt="{{ leproduit.photoPrincipale.alt() }}"
                                                      class="img-fluid"
                                                 />
                                             {% endif %}
@@ -207,7 +207,75 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-12" >
+                    <h3 class="text-center text-success">
+                        <span class="oi oi-card"></span>
+                        <span class="oi oi-check"></span>
+                    </h3>
+                </div>
+            </div>
+
         </div>
     </div>
 
+
+
 {% endblock %}
+
+{% block js %}
+    <script>
+        $("#slider-range").click(function(){
+            //alert('slider');
+            var max = $( this ).slider( "option", "max" );
+            var min = $( this ).slider( "option", "min" );
+            var values = $( this ).slider( "values" );
+            console.log(min, max, values );
+
+        });
+        $(".sortable").click(function(){
+            var crit =  $(this).data('crit');
+            var ord  = $(this).data('ord')  ;
+            $.ajax({
+                method: "post",
+                data: {'crit': crit,'ord':ord } ,
+                url: '{{ path('post_sort_product') }}',
+                dataType: "json",
+            }).done( function(response) {
+                console.log(response);
+                showProducts(response);
+            }).fail(function(jxh,textmsg,errorThrown){
+                console.log(textmsg);
+                console.log(errorThrown);
+            });
+        });
+
+        function showProducts(resp){
+            console.log(resp.length);
+            $("#produits").empty();
+            contenu = "" ;
+            for(i=0;i<resp.length;i++){
+                contenu += "<div class='col-sm-6 col-lg-4 mb-4' data-aos='fade-up'>" +
+                    "                                <div class='block-4 text-center border'>" +
+                    "                                    <figure class='block-4-image'>" +
+                    "                                                <img src='/images/products/" +resp[i].imageName +"'\n" +
+                    "                                                     alt='"+resp[i].alt +"'\n" +
+                    "                                                     class='img-fluid'" +
+                    "                                                />\n" +
+                    "                                    </figure>\n" +
+                    "                                    <div class='block-4-text p-4'>\n<h3>"+resp[i].nom +"</h3>" +
+                    "                                        <p class=\"mb-0\">\n" +
+                    "                                            "+ resp[i].description + "\n" +
+                    "                                        </p>\n" +
+                    "                                        <p class='text-primary font-weight-bold'>\n" +
+                    "                                            "+ resp[i].prix + " €\n" +
+                    "                                        </p>\n" +
+                    "\n" +
+                    "                                    </div>\n" +
+                    "                                </div>\n" +
+                    "                            </div>"
+            }
+            $("#produits").append(contenu);
+        }
+    </script>
+{% endblock js %}

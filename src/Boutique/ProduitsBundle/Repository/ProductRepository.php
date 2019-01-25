@@ -35,7 +35,12 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
     }
 
-    public function countByCategory($c){
-
+    public function pricesBetween($min, $max){
+        return $this->createQueryBuilder('p')
+            ->where('p.prix BETWEEN :min AND :max')
+            ->setParameter('min', $min)
+            ->setParameter('max', $max)
+            ->getQuery()
+            ->getResult();
     }
 }

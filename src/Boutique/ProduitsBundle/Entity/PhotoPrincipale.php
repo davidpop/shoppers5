@@ -149,4 +149,5 @@ class PhotoPrincipale
     {
         return $this->updatedAt;
     }
+
 }

@@ -281,6 +281,64 @@ class ProductController extends Controller
             ->getForm();
     }
 
+    /**
+     * Lists all product entities sorted .
+     *
+     * @Route("/sort", name="product_sort")
+     * @Method({"POST"})
+     */
+    public function postSortProductAction(Request $req){
+        if ( $req->isXmlHttpRequest() ) {
+            $em = $this->getDoctrine()->getManager();
+            $crit = $req->request->get('crit');  // crit [name, prix]
+            $order = $req->request->get('ord'); // order [ASC, DESC ]
+            //        dump($crit, $order);
+            //        exit(1);
+            $products = $em->getRepository('BoutiqueProduitsBundle:Product')
+                ->findBy([], array($crit => $order));
+            $tab = array();
+            foreach ($products as $product)
+                $tab[] = array(
+                    'id' => $product->getId(),
+                    'nom' => $product->getNom(),
+                    'description' => $product->getDescription(),
+                    'prix' => $product->getPrix(),
+                    'quantite' => $product->getQuantite(),
+                    'alt' => $product->getPhotoPrincipale()->getAlt(),
+                    'imageName' => $product->getPhotoPrincipale()->getImageName()
+                );
 
+            return new JsonResponse($tab);
+        }
+    }
+
+    /**
+     * Lists all product entities sorted .
+     *
+     * @Route("/sortprices", name="product_prices")
+     * @Method({"POST"})
+     */
+    public function postProductsPriceRangeAction(Request $req){
+        $em = $this->getDoctrine()->getManager();
+        $min = $req->request->get('min');
+        $max =  $req->request->get('max');
+//        dump($crit, $order);
+//        exit(1);
+        $products = $em->getRepository('BoutiqueProduitsBundle:Product')
+            ->pricesBetween($min, $max);
+        $tab = array();
+        foreach( $products as $product)
+            $tab[] = array(
+                'id' => $product->getId(),
+                'nom' => $product->getNom(),
+                'description' => $product->getDescription(),
+                'prix' => $product->getPrix(),
+                'quantite' => $product->getQuantite(),
+                'alt' => $product->getPhotoPrincipale()->getAlt(),
+                'imageName' => $product->getPhotoPrincipale()->getImageName()
+            );
+
+        return new JsonResponse($tab) ;
+    }
 
 }

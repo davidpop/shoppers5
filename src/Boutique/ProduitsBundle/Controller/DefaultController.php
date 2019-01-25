@@ -275,24 +275,4 @@ class DefaultController extends Controller
         return $mailer->send($message);
     }
 
-    /**
-     * @Route("/chglng", name="change_lang")
-     */
-    public function changeLanguageAction(Request $r){
-        $locale = $r->getLocale();
-        $l = $r->get('_locale');
-//        dump( $locale , $l);
-//        exit(1);
-
-        if ( $locale == 'fr')
-            $this->get('session')->set('_locale','en');
-        else
-            $this->get('session')->set('_locale','fr');
-
-        $url = $r->headers->get('referer');
-        if( empty( $url) )
-            $url = $this->container->get('router')->generate('boutique.accueil');
-        return $this->redirect($url);
-
-    }
 }
