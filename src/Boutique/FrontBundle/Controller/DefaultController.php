@@ -31,7 +31,9 @@ class DefaultController extends Controller
      */
     public function contactAction()
     {
-        return $this->render('front/default/contact.html.twig');
+        $form = $this->createForm(ContactType::class);
+        return $this->render( "front/default/contact.html.twig",
+            ['form' => $form->createView() ]);
     }
 
     /**
@@ -57,14 +59,15 @@ class DefaultController extends Controller
 //                exit(1);
                 // envoi de l email
                 $contenu = $this->render('front/default/mail.html.twig',
-                    array('nom' => $form->getData('nom')['nom'] ,
-                        'prenom' => $form->getData('prenom')['prenom'] ,
-                        'email' => $form->getData('email')['email'] ,
-                        'message' => $form->getData('message')['message'] )
+                    array('nom' => $form->get('nom')->getData() ,
+                        'prenom' => $form->get('prenom')->getData(),
+                        'email' => $form->get('email')->getData() ,
+                        'sujet' => $form->get('sujet')->getData(),
+                        'message' => $form->get('message')->getData() )
                 );
 
-                $this->sendEmail($form->getData('email'), $form->getData('email'),
-                    'contact', $contenu);
+                $this->sendEmail($form->get('email')->getData(),
+                    $form->get('email')->getData(),'contact', $contenu );
                 return new JsonResponse("OK");
             }
         }

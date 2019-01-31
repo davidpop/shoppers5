@@ -3,3 +3,21 @@ services:
     app.client.stripe:
         class: Boutique\ProduitsBundle\ServiceHandler\StripeClient
         arguments: ['%stripe_secret_key%', '%payment%', '@doctrine.orm.entity_manager', '@logger']
+#
+#    boutique_produits.event_listener.redirection_subscriber:
+#        class: Boutique\ProduitsBundle\EventListener\RedirectionSubscriber
+#        arguments: ["@router", '%languages%', '%locale%']
+#        tags:
+#            - { name: kernel.event_subscriber }
+#
+#    boutique_produits.event_listener.connexion_subscriber:
+#            class: Boutique\ProduitsBundle\EventListener\ConnexionSubscriber
+#            arguments: ["@router", '@service_container']
+#            tags:
+#                - { name: kernel.event_subscriber }
+
+    boutique_produits.event_listener.return_subscriber:
+            class: Boutique\ProduitsBundle\EventListener\ReturnSubscriber
+            arguments: ["@router", '@service_container','@event_dispatcher']
+            tags:
+                - { name: kernel.event_subscriber ,event: 'fos_user.security.implicit_login' }

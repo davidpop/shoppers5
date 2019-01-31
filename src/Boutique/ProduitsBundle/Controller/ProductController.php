@@ -322,8 +322,8 @@ class ProductController extends Controller
         $em = $this->getDoctrine()->getManager();
         $min = $req->request->get('min');
         $max =  $req->request->get('max');
-//        dump($crit, $order);
-//        exit(1);
+        dump($min, $max);
+        exit(1);
         $products = $em->getRepository('BoutiqueProduitsBundle:Product')
             ->pricesBetween($min, $max);
         $tab = array();

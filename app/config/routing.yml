@@ -14,10 +14,10 @@ boutique_front:
 boutique_produits:
     resource: "@BoutiqueProduitsBundle/Controller/"
     type:     annotation
-    prefix:   /{_locale}/boutique
-    defaults: { _locale: fr }
-    requirements:
-        _locale: fr|en
+    prefix:   /boutique
+#    defaults: { _locale: fr }
+#    requirements:
+#        _locale: fr|en
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

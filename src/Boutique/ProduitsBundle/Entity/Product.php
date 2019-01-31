@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="product")
  * @ORM\Entity(repositoryClass="Boutique\ProduitsBundle\Repository\ProductRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Product
 {
@@ -80,6 +81,13 @@ class Product
      * @ORM\OneToMany(targetEntity="Image", mappedBy="product", cascade={"persist","remove"})
      */
     private $images;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     /**
      * Get id
@@ -287,4 +295,38 @@ class Product
         return $this->nom;
     }
 
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Product
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * auto update
+     *
+     * @ORM\PreUpdate
+     */
+    public function maj()
+    {
+        $this->updatedAt = new \DateTime();
+    }
 }

@@ -231,7 +231,18 @@
             var min = $( this ).slider( "option", "min" );
             var values = $( this ).slider( "values" );
             console.log(min, max, values );
-
+            $.ajax({
+                method: "post",
+                data: {'min':values[0],'max':values[1]} ,
+                url: '{{ path('product_prices') }}',
+                dataType: "json",
+            }).done( function(response) {
+                console.log(response);
+                //showProducts(response);
+            }).fail(function(jxh,textmsg,errorThrown){
+                console.log(textmsg);
+                console.log(errorThrown);
+            });
         });
         $(".sortable").click(function(){
             var crit =  $(this).data('crit');

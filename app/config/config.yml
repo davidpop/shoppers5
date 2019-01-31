@@ -7,11 +7,11 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    languages:  ['fr', 'en']
     payment:
         currency: EUR
         decimal: true
     app.path.product_images: /images/products
-        # premium_amount: 1
 
 
 framework:

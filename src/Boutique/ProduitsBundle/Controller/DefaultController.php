@@ -150,13 +150,14 @@ class DefaultController extends Controller
      * @Route("/validatecart/{step}", name="validate_cart")
      */
     public function validateCartAction(Request$request, $step=1){
-        if ( $step == 1 ){
+/*        if ( $step == 1 ){
             $utilisateur = $this->getUser();
             if (  $utilisateur == null ){
                 return $this->render('product/demande_connexion.html.twig');
             }
             return $this->redirectToRoute('validate_cart',['step'=>2]);
         }
+*/
         /*****************************************************************/
         /*****************************************************************/
         if ( $step == 2 ) {

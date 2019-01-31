@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="category")
  * @ORM\Entity(repositoryClass="Boutique\ProduitsBundle\Repository\CategoryRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Category
 {
@@ -57,6 +58,12 @@ class Category
      */
     private $description;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     /**
      * Get id
@@ -147,5 +154,51 @@ class Category
     public function __toString()
     {
         return $this->nom ;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Category
+     *
+     * @ORM\PostUpdate
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * auto update
+     *
+     * @ORM\PreUpdate
+     */
+    public function maj()
+    {
+        $this->updatedAt = new \DateTime();
+    }
+
+    /**
+     * auto update
+     *
+     * @ORM\PostUpdate
+     */
+    public function tst()
+    {
+        //die("test");
     }
 }

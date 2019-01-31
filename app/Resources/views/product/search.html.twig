@@ -21,7 +21,7 @@
                                 <figure class="block-4-image">
                                     <a href="{{ path('product_show',{'id': p.getId()} ) }}">
                                         {% if p.getPhotoPrincipale() %}
-                                            <img src="/images/products/{{ absolute_url(asset(p.photoPrincipale.imageName)) }}"
+                                            <img src="/images/products/{{ p.photoPrincipale.imageName }}"
                                                  alt="{{ p.photoPrincipale.alt }}"
                                                  class="img-fluid"
                                             />
